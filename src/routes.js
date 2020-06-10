@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter, Switch, Route, Router} from 'react-router-dom';
 import history from './history';
@@ -10,8 +11,8 @@ export default function Routes() {
     <Router history={history}>
       <Switch>
         {/**exact é pra dizer que o componente só pode renderizar na path especificada */}
-        <Route exact path={'/'} component={HomePage} /> 
-        <Route exact path={'/home'} component={HomePage} /> 
+        <Route path={'/'} component={HomePage} /> 
+        <Route path={'/home'} component={HomePage} /> 
         <Route exact path={'/club'} component={Club} />
       </Switch>
     </Router>

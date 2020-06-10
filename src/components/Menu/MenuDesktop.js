@@ -1,6 +1,6 @@
 import React from 'react';
 import './MenuDesktop.css';
-import HomePage from '../HomePage';
+import SwipeableTextMobileStepper from '../HomePage';
 const logo = require('../../assets/logo.png')
 
 export default function MenuDesktop() {
