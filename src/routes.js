@@ -10,7 +10,7 @@ export default function Routes() {
     <Router history={history}>
       <Switch>
         {/**exact é pra dizer que o componente só pode renderizar na path especificada */}
-        <Route path={'/home'} component={HomePage} /> 
+        <Route path={'/'} component={HomePage} /> 
         <Route exact path={'/club'} component={Club} />
       </Switch>
     </Router>
