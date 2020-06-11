@@ -33,7 +33,6 @@ function HomePage() {
           <h6 className="date"><a>20/20/2020</a></h6>
         </div>
       </div>
-
       <div className="newsJogos">
         <h3>Notícias do time</h3>
         <div>
@@ -52,7 +51,6 @@ function HomePage() {
           <h6 className="date"><a>20/20/2020</a></h6>
         </div>
       </div>
-
     </div>
   )
 }
