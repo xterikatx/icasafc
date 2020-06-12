@@ -7,7 +7,7 @@ const newPhoto = require('../../assets/foto5.jpg');
 function NoticiaJogos() {
 
   return (
-    <div className="newsJogoss">
+    <div className="newsJogos2">
     <h3>Notícias de Jogos</h3>
       <div className="newstwo">
         <a href="news.html"><img className="photonews" src={newPhoto} alt="foto" /></a>

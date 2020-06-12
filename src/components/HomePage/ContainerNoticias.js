@@ -8,7 +8,7 @@ function NoticiaTime() {
 
   return (
     <div className="newsJogoss">
-    <h3>Notícias de Jogos</h3>
+    <h3>Notícias de Jogos 2</h3>
       <div className="newstwo">
         <a href="news.html"><img className="photonews" src={newPhoto} alt="foto" /></a>
         <h4><a href="news.html">Veja as ultimas noticias relacionadas da internet</a></h4>

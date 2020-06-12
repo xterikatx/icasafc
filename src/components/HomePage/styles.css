@@ -92,7 +92,6 @@ h4 a {
     margin-top: 20px;
     margin-left: 10px;
     /*border: 0px solid #1C6EA4;*/
-
     position: relative;
 }
 
@@ -101,6 +100,17 @@ h4 a {
   height: 480px;
   width: 380px;
   border: 1px solid gray;
+  margin-left: 50px;
+  margin-top: 90px
+}
+.newsJogos2{
+  background-color: white;
+  height: 480px;
+  width: 380px;
+  border: 1px solid gray;
+  margin-left: 450px;
+  margin-top: -480px
+
 }
 
 .form {
