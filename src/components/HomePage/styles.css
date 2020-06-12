@@ -86,31 +86,36 @@ h4 a {
 
 
 .newstwo{
-
     height: 120px;
     width: 340px;
     margin-top: 20px;
     margin-left: 10px;
     /*border: 0px solid #1C6EA4;*/
     position: relative;
+
 }
 
 .newsJogoss{
   background-color: white;
   height: 480px;
   width: 380px;
-  border: 1px solid gray;
+
   margin-left: 50px;
   margin-top: 90px;
   background-color: white;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+    box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
 }
 .newsJogos2{
   background-color: white;
   height: 480px;
   width: 380px;
-  border: 1px solid gray;
   margin-left: 450px;
-  margin-top: -480px
+  margin-top: -480px;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
 
 }
 
