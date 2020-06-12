@@ -13,7 +13,7 @@ const imagens = require('../../assets/banner.PNG')
 const newPhoto = require('../../assets/foto5.jpg')
 function HomePage() {
   return (
-    <div>
+    <div className="all_components">
       <AwesomeSlider className='aws-btn'>
         <div data-src={imagens} />
         <div data-src={imagens} />
@@ -30,5 +30,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-
