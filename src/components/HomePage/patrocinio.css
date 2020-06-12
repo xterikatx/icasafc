@@ -1,7 +1,7 @@
 .sponsorship {
     position: relative;
     width: 322px;
-    height: 684px;
+    height: 480px;
     background: white;
     margin-left: 1120px;
     margin-top: -480px;
@@ -9,7 +9,9 @@
     -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
     box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
 }
-
+h3{
+  text-align: center;
+}
 .sponsorship a{
     position: relative;
     padding: 5px;
@@ -17,6 +19,6 @@
 }
 
 iframe {
-  margin-left: 6px ; margin-top: 480px;
-
+  margin-left: 6px ; 
+  margin-top: 20px;
 }
