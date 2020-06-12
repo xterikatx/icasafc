@@ -6,7 +6,7 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 .ul {
-  background-color:  #008115;
+  background-color:  #388E3C;
 }
 
 .logo {
@@ -44,7 +44,7 @@ li a {
 }
 
 li a:hover:not(.active) {
-  color: rgb(230, 200, 33);
+  color: #FFF700;
 }
 
 .active {
