@@ -8,11 +8,11 @@ export default function Menu() {
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-device-width: 1024px)'
   })
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 600px)' })
+  const isMobile = useMediaQuery({ query: '(max-width: 600px)' })
 
   return (
     <div>
-      {isDesktopOrLaptop ? <MenuDesktop /> : isTabletOrMobile ? <MenuMobile/> : null }
+      {isDesktopOrLaptop ? <MenuDesktop /> : isMobile ? <MenuMobile/> : null }
     </div>
    
   )
