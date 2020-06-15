@@ -56,13 +56,13 @@ const tileData = [
     author: 'congerdesign',
   },
   {
-    img: banner,
+    img: '/static/images/grid-list/star.jpg',
     title: 'Sea star',
     cols: 2,
     author: '821292',
   },
   {
-    img: banner,
+    img: '/static/images/grid-list/bike.jpg',
     title: 'Bike',
     author: 'danfador',
   },

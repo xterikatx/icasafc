@@ -10,14 +10,14 @@ import Address from './Address';
 import Footer from '../Footer';
 
 const imagens = require('../../assets/banner.PNG')
-const newPhoto = require('../../assets/foto5.jpg')
+const imgs = require('../../assets/banner-slider.jpg')
 function HomePage() {
   return (
     <div className="all_components">
-      <AwesomeSlider className='aws-btn'>
-        <div data-src={imagens} />
-        <div data-src={imagens} />
-        <div data-src={imagens} />
+      <AwesomeSlider cssModule={AwsSliderStyles} className='aws-btn'>
+        <div data-src={imgs} />
+        <div data-src={imgs} />
+        <div data-src={imgs} />
       </AwesomeSlider>
       {/*section de noticias aqui*/}
       <NoticiaTime />
