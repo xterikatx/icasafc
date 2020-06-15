@@ -1,8 +1,8 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive'
 
-import Desktop from './testet';
-import Mobile from './teste';
+import Desktop from './tabela';
+import Mobile from './tabela';
 
 export default function Menu() {
   const isDesktopOrLaptop = useMediaQuery({

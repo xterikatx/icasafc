@@ -1,0 +1,114 @@
+/*Caminho do usuario*/
+.where_i_am {
+    color:white;
+}
+
+.where_i_am a{
+    color:white;
+}
+
+body {
+    background-image:url("../img/gale.jpg");
+    background-size: cover;
+}
+
+.wrapper {
+    max-width: 80.3em;
+    width: 100%;
+    margin: 0 auto;
+    padding:  1em 2em;
+    filter: none;
+    -moz-transition: opacity 1s ease, -moz-filter 1s ease;
+    -webkit-transition: opacity 1s ease, -webkit-filter 1s ease;
+    -ms-transition: opacity 1s ease, -ms-filter 1s ease;
+    transition: opacity 1s ease, filter 1s ease;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* Container */
+.container1 {
+    background-color: rgba(255, 255, 255, 0.808);
+    width: 90%;
+    height: 47px;
+    margin-top: 10px;
+    padding-right: 0px;
+    margin-right: 10px;
+    margin-left: 3%;
+    /* padding-right: 10px; */
+}
+.container2 {
+    width:88vw;
+    height: 300px;
+    align-items: center;
+    /* background-color: rgba(0, 145, 47, 0.4); */
+    min-width: 240px;
+    margin-left: 10%;
+}
+.container3 {
+    background-color: #FFFFFF;
+    width: 1286px;
+    height: 47px;
+    margin-top: 10px;
+}
+.container4 {
+    width: 1286px;
+    height: 271 px;
+    background-color: rgba(0, 145, 47, 0.4);
+}
+
+/*Fotos utilizadas nas divs*/
+#fotos{
+    margin-left: 20px;
+    margin-top: 25px;
+    float: left;
+    width: 19%;
+    /* height: ; */
+    /* min-width: 190px; */
+    object-fit: cover;
+    min-width: 220px;
+    align-items: center;
+}
+
+.cont {
+    margin-left: 15px;
+}
+
+#margingallery {
+    /* position: absolute; */
+     margin-top: -60px;
+    /*margin-left: 50%; */
+    font-size: 25px;
+    text-align: center;
+    align-items: center;
+    color:black;
+    font-weight: 600;
+}
+
+/*Footer*/
+footer {
+    width: 100%;
+    background:#fafafa;
+    bottom: 0;
+    border-top: 1px solid rgb(218, 218, 218);
+    -moz-transition: opacity 1s ease, -moz-filter 1s ease;
+    -webkit-transition: opacity 1s ease, -webkit-filter 1s ease;
+    -ms-transition: opacity 1s ease, -ms-filter 1s ease;
+    transition: opacity 1s ease, filter 1s ease;
+    max-width: 100.3em;
+    margin: 0 auto;
+    padding-top: 1em;
+    filter: none;
+    margin-top: 0px;
+    font-family: sans-serif;
+}
+
+footer div {
+    margin-left: 280px; 
+    text-align: center;
+    padding: 30px;
+    width: 690px;
+    color:black;
+    line-height: 1.5;
+}

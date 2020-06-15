@@ -11,9 +11,9 @@ export default function MenuDesktop() {
         <ul class="ul">
           <div class="margin">
             <li><a class="" href="/home">Início</a></li>
-            <li><a href="/club">O clube</a></li>
-            <li><a href="/">Tabelas</a></li>
-            <li><a href="/">Notícias</a></li>
+            <li><a href="/">O clube</a></li>
+            <li><a href="/Tabelas">Tabelas</a></li>
+            <li><a href="/club">Notícias</a></li>
             <li><a href="/">Programação</a></li>
             <li><a href="/">Mídia</a></li>
             <li><a href="/">Contato</a></li>
