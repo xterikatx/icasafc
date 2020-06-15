@@ -6,6 +6,7 @@ import history from './history';
 import HomePage from './components/HomePage';
 import Club from './components/Club'
 import Tabelas from './components/StickyHeadTable';
+import ImageGridList from './components/ImageGridList';
 //AQUI ADICIONA TODAS OS COMPONENTES QUE VÃO SER RENDERIZADOS.
 export default function Routes() {
   return (
@@ -16,6 +17,7 @@ export default function Routes() {
         <Route exact path={'/home'} component={HomePage} />
         <Route exact path={'/club'} component={Club} />
         <Route exact path={'/Tabelas'} component={Tabelas} />
+        <Route exact path={'/ImageGridList'} component={ImageGridList} />
       </Switch>
     </Router>
   );
