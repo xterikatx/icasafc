@@ -14,7 +14,7 @@ const imgs = require('../../assets/banner-slider.jpg')
 function HomePage() {
   return (
     <div className="all_components">
-      <AwesomeSlider cssModule={AwsSliderStyles} className='aws-btn'>
+      <AwesomeSlider className='aws-btn' >
         <div data-src={imgs} />
         <div data-src={imgs} />
         <div data-src={imgs} />
