@@ -1,67 +1,68 @@
-
+const logo = require('../../assets/logo.png');
+const banner = require('../../assets/banner.PNG');
 const tileData = [
   {
-    img: '../../assets/logo.png',
+    img: logo,
     title: 'Breakfast',
     author: 'jill111',
     cols: 2,
     featured: true,
   },
   {
-    img: '../../assets/logo.png',
+    img: logo,
     title: 'Tasty burger',
     author: 'director90',
   },
   {
-    img: '../../assets/logo.png',
+    img: logo,
     title: 'Camera',
     author: 'Danson67',
   },
   {
-    img: '../../assets/banner.png',
+    img: banner,
     title: 'Morning',
     author: 'fancycrave1',
     featured: true,
   },
   {
-    img: '/static/images/grid-list/hats.jpg',
+    img: banner,
     title: 'Hats',
     author: 'Hans',
   },
   {
-    img: '/static/images/grid-list/honey.jpg',
+    img: banner,
     title: 'Honey',
     author: 'fancycravel',
   },
   {
-    img: '/static/images/grid-list/vegetables.jpg',
+    img: banner,
     title: 'Vegetables',
     author: 'jill111',
     cols: 2,
   },
   {
-    img: '/static/images/grid-list/plant.jpg',
+    img: banner,
     title: 'Water plant',
     author: 'BkrmadtyaKarki',
   },
   {
-    img: '../src/assets/banner.png',
+    img: banner,
     title: 'Mushrooms',
     author: 'PublicDomainPictures',
   },
   {
-    img: '/static/images/grid-list/olive.jpg',
+    img: banner,
     title: 'Olive oil',
     author: 'congerdesign',
   },
   {
-    img: '/static/images/grid-list/star.jpg',
+    img: banner,
     title: 'Sea star',
     cols: 2,
     author: '821292',
   },
   {
-    img: '/static/images/grid-list/bike.jpg',
+    img: banner,
     title: 'Bike',
     author: 'danfador',
   },
