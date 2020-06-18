@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 body {
-  background: #ffffff url(${background}) no-repeat center top;
   -webkit-font-smoothing: antialiased;
   background-color: #f3f3f3;
 }
