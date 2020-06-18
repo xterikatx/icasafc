@@ -1,5 +1,7 @@
 import React from 'react';
 import './index.css';
+import Address from '../HomePage/Address';
+import Footer from '../Footer';
 const img5 = require('../../assets/foto5.jpg')
 const img1 = require('../../assets/foto1.jpg')
 const img2 = require('../../assets/foto2.jpg')
@@ -89,6 +91,7 @@ function News() {
             <h6 id="date"><a>20/20/2020</a></h6>
         </div>
     </section>
+    <Footer />
   </div>
   );
 }

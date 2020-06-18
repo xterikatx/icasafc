@@ -7,10 +7,12 @@ function Footer() {
 
 
       <footer>
+         <br/>
         <div>
             <span>Associação Desportiva Recreativa e Cultural IcasaIcasafc.com - Todos os direitos reservados.</span>
         </div>
-        <div class="form">
+        <br/>
+        <div className="form">
             <form>
                 <img src="icon/insta.png" alt=""/>
                 <a>Contato:</a>
