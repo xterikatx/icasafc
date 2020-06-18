@@ -37,7 +37,7 @@ function News() {
         </a>
     </div>
     
-    <div className="othernews">
+    {/* <div className="othernews">
         <p><h2>Outras Notícias:</h2></p>
         <div style={{lineHeight: 2}}>
             <a href="/">11/07/2011 - VOLANTE LEANDRO ASSIS   O NOVO REFOR O DO VERD O ...</a>
@@ -56,7 +56,7 @@ function News() {
             <br />
             <a href="/">07/07/2011 - ARBITRO BAIANO DIRIGE ICASA X N UTICO ...</a>
         </div>
-    </div>
+    </div> */}
     
     <section className="blocknews">
         <div className="moresse"><a style={{position: 'relative', fontWeight: 'bold'}}>Mais Lidas:</a></div>
@@ -64,31 +64,31 @@ function News() {
         <div id="morenews">
             <a href="/Noticia"><img id="photonews" src={img2} alt="foto" /></a>
             <h5><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h5>
-            <h6 id="date"><a>20/20/2020</a></h6>
+            <h6 className="date"><a>20/20/2020</a></h6>
         </div>
         
         <div id="morenews">
             <a href="/Noticia"><img id="photonews" src={img6} alt="foto" /></a>
             <h5><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h5>
-            <h6 id="date"><a>20/20/2020</a></h6>
+            <h6 className="date"><a>20/20/2020</a></h6>
         </div>
         
         <div id="morenews">
             <a href="/Noticia"><img id="photonews" src={img5} alt="foto" /></a>
             <h5><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h5>
-            <h6 id="date"><a>20/20/2020</a></h6>
+            <h6 className="date"><a>20/20/2020</a></h6>
         </div>
         
         <div id="morenews">
             <a href="/Noticia"><img id="photonews" src={img5} alt="foto" /></a>
             <h5><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h5>
-            <h6 id="date"><a>20/20/2020</a></h6>
+            <h6 className="date"><a>20/20/2020</a></h6>
         </div>
         
         <div id="morenews">
             <a href="/Noticia"><img id="photonews" src={img5} alt="foto"/></a>
             <h5><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h5>
-            <h6 id="date"><a>20/20/2020</a></h6>
+            <h6 className="date"><a>20/20/2020</a></h6>
         </div>
     </section>
     <Footer />

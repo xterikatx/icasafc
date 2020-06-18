@@ -37,7 +37,7 @@ body{
   height: 684px;
   background: rgb(255, 255, 255);
   margin-left: 920px;
-  margin-top: -978px;
+  margin-top: -520px;
   border: 0px solid white;
   border-radius: 10px;
   -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
@@ -94,16 +94,17 @@ h5 a:hover {
   color:#008115   ;
 }
 
-#date {
+.date {
   margin:0;
   padding: 0;
-  margin-top: -39px; 
+  margin-top: -19px; 
   position: absolute;
 }
 
-#date a{
+.date a{
   margin-left: 215px; 
   color: #8B8B8B;
+  margin-top: 10px;
 }
 
 footer {
