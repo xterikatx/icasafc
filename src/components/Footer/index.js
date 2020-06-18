@@ -4,26 +4,21 @@ import './styles.css';
 const img = require('../../assets/insta.png')
 function Footer() {
   return (
-
-
       <footer>
-         <br/>
-        <div>
+        {/* <div>
             <span>Associação Desportiva Recreativa e Cultural IcasaIcasafc.com - Todos os direitos reservados.</span>
-        </div>
-        <br/>
+        </div> */}
         <div className="form">
             <form>
-                <img src="icon/insta.png" alt=""/>
+                <img src={img} className="img"alt=""/>
                 <a>Contato:</a>
                 <input className="caixa a" placeholder="E-mail:"/>
                 <input className="caixa b" placeholder="Nome:"/>
             </form>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Mensgem"></textarea>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Mensagem"></textarea>
             <button className="in">Enviar</button>
         </div>
     </footer>
-
   )
 
 }
