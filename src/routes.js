@@ -3,7 +3,6 @@ import React from 'react';
 import {Switch, Route, Router} from 'react-router-dom';
 import history from './history';
 import HomePage from './components/HomePage';
-import Club from './components/Club'
 import Tabelas from './components/StickyHeadTable';
 import ImageGridList from './components/ImageGridList';
 import News from './components/News';
@@ -16,7 +15,6 @@ export default function Routes() {
         {/**exact é pra dizer que o componente só pode renderizar na path especificada */}
         <Route exact path={'/'} component={HomePage} />
         <Route exact path={'/home'} component={HomePage} />
-        <Route exact path={'/club'} component={Club} />
         <Route exact path={'/Tabelas'} component={Tabelas} />
         <Route exact path={'/ImageGridList'} component={ImageGridList} />
         <Route exact path={'/Midia'} component={Midia} />

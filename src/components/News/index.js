@@ -1,8 +1,8 @@
 import React from 'react';
 import { useMediaQuery } from 'react-responsive'
 
-import NewsDesktop from './news';
-import News from './newsmob';
+import Desktop from './testet';
+import Mobile from './teste';
 
 export default function Menu() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -12,7 +12,7 @@ export default function Menu() {
 
   return (
     <div>
-      {isDesktopOrLaptop ? <NewsDesktop /> : isMobile ? <News/> : null }
+      {isDesktopOrLaptop ? <Desktop /> : isMobile ? <Mobile/> : null }
     </div>
 
   )
