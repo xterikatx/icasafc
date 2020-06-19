@@ -110,7 +110,7 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <img alt="Logo do icasa" className="logo" src={logo} />
+          <img style={{marginLeft: '36%'}} alt="Logo do icasa" className="logo" src={logo} />
 
 
         </Toolbar>
@@ -154,7 +154,7 @@ export default function PersistentDrawerLeft() {
         })}
       >
         <div className={classes.drawerHeader} />
-        
+
       </main>
     </div>
   );
