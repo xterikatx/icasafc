@@ -2,7 +2,7 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive'
 
 import MenuDesktop from './MenuDesktop';
-import MenuMobile from './MenMobile';
+import PersistentDrawerLeft from './MenMobile';
 
 export default function Menu() {
   const isDesktopOrLaptop = useMediaQuery({
@@ -12,8 +12,7 @@ export default function Menu() {
 
   return (
     <div>
-      {isDesktopOrLaptop ? <MenuDesktop /> : isMobile ? <MenuMobile/> : null }
+      {isDesktopOrLaptop ? <MenuDesktop /> : isMobile ? <PersistentDrawerLeft/> : null }
     </div>
-   
   )
 }
