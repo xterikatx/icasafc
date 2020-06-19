@@ -43,6 +43,14 @@ function Midia() {
             <img className="fotos" src={img5} style={{ height: '152px' }} />
           </div>
         </div>
+
+        {/* title video grid list */}
+        <div className="container3">
+          <a><img src={logo} alt="Logo do icasa" style={{ marginLeft: '550px', height: '43px', width: '62px', marginTop: '3px' }} /></a>
+          <div className="margingallery">
+            <a>Videos</a>
+          </div>
+        </div>
       </div>
     </div>
   );
