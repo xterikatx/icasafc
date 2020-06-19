@@ -15,7 +15,7 @@ export default function MenuDesktop() {
             <li><a href="/Tabelas">Tabelas</a></li>
             <li><a href="/club">Notícias</a></li>
             <li><a href="/">Programação</a></li>
-            <li><a href="/ImageGridList">Mídia</a></li>
+            <li><a href="/Midia">Mídia</a></li>
             <li><a href="/">Contato</a></li>
           </div>
           </ul>
