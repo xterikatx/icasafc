@@ -2,7 +2,6 @@
 import React from 'react';
 import {Switch, Route, Router} from 'react-router-dom';
 import history from './history';
-
 import HomePage from './components/HomePage';
 import Club from './components/Club'
 import Tabelas from './components/StickyHeadTable';
