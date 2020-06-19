@@ -24,6 +24,7 @@ function HomePage() {
       <NoticiaJogos />
       <Patrocinio />
       <Address />
+    
     </div>
   )
 }
