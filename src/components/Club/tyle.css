@@ -7,11 +7,16 @@
   margin-top: -40px;
 }
 .por {
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-left: 10px;
 }
 .typo {
   background-color: white;
   padding: 15px;
+}
+
+.dt {
+  margin-left: 10px
 }
 
 .til{
