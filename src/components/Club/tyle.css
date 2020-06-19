@@ -1,16 +1,21 @@
-img {
-  max-width: 100%;
+.bannr {
+  background-color: red;
+  width: 100%;
+  height: 100%;
   max-height: 300px;
-  margin-top:-40px;
-  margin-right: 10px;
+  object-fit: cover;
+  margin-top: -40px;
+}
+.por {
+  margin-top: 10px;
+}
+.typo {
+  background-color: white;
+  padding: 15px;
 }
 
-.typo {
-  margin-top: 110px;
-  background-color: white;
-  padding: 10px 10px 0 0;
-  margin-right: 10px;
-  margin-left: 10px;
+.til{
+  padding: 15px 10px 5px 10px;
 }
 
 .bl {
