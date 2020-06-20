@@ -1,7 +1,7 @@
-.aws-btn {
+.aws-btm {
 
-  --slider-height-percentage: 25%;
-  --slider-transition-duration: 200ms;
+  --slider-height-percentage: 15%;
+  --slider-transition-duration: 2ms;
   --organic-arrow-thickness: 4px;
   --organic-arrow-border-radius: 0px;
   --organic-arrow-height: 18px;
@@ -12,7 +12,18 @@
   --control-bullet-color: #686666;
   --control-bullet-active-color: #217416;
   --loader-bar-color: #5dd65d;
-  --loader-bar-height: 6px;
+  --loader-bar-height: 3px;
+
+  width: 90%;
+  height: 300px;
+  margin-top: 10px;
+  margin-left: 70px;
+  margin-right: 0;
+}
+
+.til {
+  margin-top: 30px;
+  padding-top: 10px;
 }
 
 .photonews {
