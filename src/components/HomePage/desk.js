@@ -4,7 +4,6 @@ import AwsSliderStyles from 'react-awesome-slider/src/styles';
 import './styles.css';
 import './patrocinio.css';
 
-
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -12,8 +11,6 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
 import MobileStepper from '@material-ui/core/MobileStepper';
-
-
 
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
@@ -68,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
     height: 100,
     objectFit:'cover',
   },
-  img: {
+  imgs: {
     margin: 'auto',
     display: 'block',
     maxWidth: '100%',
@@ -90,8 +87,10 @@ const useStyles = makeStyles((theme) => ({
      maxWidth: 900,
      overflow: 'hidden',
      width: '100%',
+     width:'80%',
   },
 }));
+
 const newPhoto = require('../../assets/foto5.jpg');
 const imagens = require('../../assets/banner.PNG');
 const imgs = require('../../assets/banner-slider.jpg');
@@ -158,36 +157,13 @@ function HomePage() {
       {/*section de noticias aqui*/}
 
       <div className="newsJogoss">
-      <h3>Notícias do time</h3>
-      <div className="newstwo">
-      <a href="/Noticia"><img className="photonews" src={newPhoto} alt="foto" /></a>
-      <h4><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h4>
-      <h6 className="date"><a>20/20/2020</a></h6>
-      </div>
-
-      <div className="newstwo">
-      <a href="/Noticia"><img className="photonews" src={newPhoto} alt="foto" /></a>
-      <h4><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h4>
-      <h6 className="date"><a>20/20/2020</a></h6>
-      </div>
-
-
-      <div className="newstwo">
-
-      <a href="/Noticia"><img className="photonews" src={newPhoto} alt="foto" /></a>
-      <h4><a href="/Noticia">Veja as ultimas noticias relacionadas da internet</a></h4>
-      <h6 className="date"><a>20/20/2020</a></h6>
-      </div>
-      </div>
-
-      <div className="newsJogos2">
       <h3>Notícias de Jogos</h3>
       <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="Imagem da noticia" src={ft} />
+              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -218,7 +194,7 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complex" src={ft} />
+              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -248,7 +224,99 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complex" src={ft} />
+              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={2}>
+              <Grid item xs>
+              <Typography gutterBottom variant="subtitle1">
+                 Titulo
+                </Typography>
+                <Typography variant="body2" gutterBottom>
+                  Qualleeeeeeee
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  ID: 1030114
+                </Typography>
+              </Grid>
+            </Grid>
+            
+          </Grid>
+        </Grid>
+      </Paper>
+    </div>
+      </div>
+
+      <div className="newsJogos2">
+      <h3>Notícias de Jogos</h3>
+      <div className={classes.root}>
+      <Paper className={classes.paper}>
+        <Grid container spacing={2}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={2}>
+              <Grid item xs>
+              <Typography gutterBottom variant="subtitle1">
+                 Titulo
+                </Typography>
+                <Typography variant="body2" gutterBottom>
+                  Qualleeeeeeee
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  10/10/20
+                </Typography>
+              </Grid>
+              
+            </Grid>
+            
+          </Grid>
+        </Grid>
+      </Paper>
+    </div>
+
+    {/* outro */}
+
+    <div className={classes.root}>
+      <Paper className={classes.paper}>
+        <Grid container spacing={2}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs={12} sm container>
+            <Grid item xs container direction="column" spacing={2}>
+              <Grid item xs>
+                <Typography gutterBottom variant="subtitle1">
+                 Titulo
+                </Typography>
+                <Typography variant="body2" gutterBottom>
+                  Qualleeeeeeee
+                </Typography>
+                <Typography variant="body2" color="textSecondary">
+                  ID: 1030114
+                </Typography>
+              </Grid>
+            </Grid>
+            
+          </Grid>
+        </Grid>
+      </Paper>
+    </div>
+
+    {/* outro */}
+
+    <div className={classes.root}>
+      <Paper className={classes.paper}>
+        <Grid container spacing={2}>
+          <Grid item>
+            <ButtonBase className={classes.image}>
+              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
