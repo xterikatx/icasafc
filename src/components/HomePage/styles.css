@@ -87,6 +87,12 @@ h4 a {
     color: #8B8B8B;
 }
 
+.txtnot{
+  padding: 10px 0 0 20px;
+
+  color: black;
+}
+
 /* CTA */
 .cta {
   background-color: #424040;
