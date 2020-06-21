@@ -26,6 +26,22 @@
   padding-top: 10px;
 }
 
+.tett {
+  margin-top: 10px;
+  margin-left: 15%;
+
+}
+
+.MuiTypography-root.tett.MuiTypography-body1{
+  margin-left: 190px;
+  margin-top: 250px;
+  position: absolute;
+  z-index: 1;
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+}
+
 .photonews {
   background-size:cover;  width:100%;
   /* height: 206px; */
