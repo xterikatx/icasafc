@@ -1,10 +1,10 @@
 .sponsorship {
     position: relative;
     width: 322px;
-    height: 480px;
+    height: 430px;
     background: white;
-    margin-left: 1000px;
-    margin-top: -480px;
+    margin-left: 72%;
+    margin-top: -430px;
     -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
     box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
@@ -20,5 +20,5 @@ h3{
 
 iframe {
   margin-left: 6px ;
-  margin-top: 20px;
+  margin-top: 13px;
 }
