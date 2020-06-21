@@ -17,6 +17,8 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
+import Link from '@material-ui/core/Link';
+{/* <script src="fonte.js"></script> */}
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
@@ -98,6 +100,8 @@ function HomePage() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = tutorialSteps.length;
+  const preventDefault = (event) => event.preventDefault();
+
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -154,6 +158,9 @@ function HomePage() {
 
       <div className="newsJogoss">
       <h3>Notícias de Jogos</h3>
+      <button onClick="fonte('a');">A+</button>
+      <button onClick="fonte('n');" title="Normal">A</button>
+      <button onClick="fonte('d');">A-</button>
       <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
@@ -165,11 +172,14 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Typography gutterBottom variant="subtitle1">
-                 Titulo
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Qualleeeeeeee
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              {'Titulo da Noticia'}
+              </Link>
+              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                <Typography variant="body2" gutterBottom color="textSecondary">
+                  A descrição das noticias fica localizado aqui
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
                   10/10/20
@@ -196,11 +206,14 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-                <Typography gutterBottom variant="subtitle1">
-                 Titulo
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Qualleeeeeeee
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              {'Titulo da Noticia'}
+              </Link>
+              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                <Typography variant="body2" gutterBottom color="textSecondary">
+                  A descrição das noticias fica localizado aqui
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
                   ID: 1030114
@@ -226,11 +239,14 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Typography gutterBottom variant="subtitle1">
-                 Titulo
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Qualleeeeeeee
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              {'Titulo da Noticia'}
+              </Link>
+              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                <Typography variant="body2" gutterBottom color="textSecondary">
+                  A descrição das noticias fica localizado aqui
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
                   ID: 1030114

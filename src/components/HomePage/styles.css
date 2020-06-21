@@ -122,6 +122,27 @@ h4 a {
 
 }
 
+.ti {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.tii {
+  font-weight: 700;
+  font-size: 30px;
+  margin-left: 30px;
+  margin-top: 100px;
+  padding-left: 70px;
+}
+a:focus, input:focus, button:focus, select:focus {
+  font-weight: bold;
+}
+
+.ti:hover {
+  color:rgb(1, 223, 1);
+}
+
 .newsJogoss{
   background-color: white;
   height: 430px;
@@ -136,7 +157,7 @@ h4 a {
 .newsJogos3{
   background-color: white;
   height: 430px;
-  width: 380px;
+  width: 30%;
   margin-left: 37%;
   margin-top: -431px;
   -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
