@@ -27,14 +27,15 @@
 }
 
 .tett {
-  margin-top: 10px;
-  margin-left: 15%;
+  margin-top: -00px;
+  margin-left: 4%;
 
 }
 
+
 .MuiTypography-root.tett.MuiTypography-body1{
-  margin-left: 190px;
-  margin-top: 250px;
+  margin-left: 60px;
+  margin-top: 320px;
   position: absolute;
   z-index: 1;
   color: white;
@@ -123,21 +124,21 @@ h4 a {
 
 .newsJogoss{
   background-color: white;
-  height: 480px;
-  width: 380px;
-  margin-left: 100px;
-  margin-top: 90px;
+  height: 430px;
+  width: 30%;
+  margin-left: 4%;
+  margin-top: 40px;
   background-color: white;
   -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
   box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
 }
-.newsJogos2{
+.newsJogos3{
   background-color: white;
-  height: 480px;
+  height: 430px;
   width: 380px;
-  margin-left: 530px;
-  margin-top: -480px;
+  margin-left: 37%;
+  margin-top: -431px;
   -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
   -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
   box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);

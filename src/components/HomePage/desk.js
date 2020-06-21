@@ -28,30 +28,26 @@ const tutorialSteps = [
   {
     label: 'Bird',
     imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=600&h=250&q=60',
+      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=1200&h=250&q=60',
   },
   {
     label: 'Bali, Indonesia',
     imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&h=250&q=80',
+      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&h=250&q=80',
   },
   {
     label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
     imgPath:
-      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=600&h=250&q=60',
+      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=1200&h=250&q=60',
   },
   {
     label: 'Goč, Serbia',
     imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=600&h=250&q=60',
+      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=1200&h=250&q=60',
   },
 ];
 
 const useStyles = makeStyles((theme) => ({
-  label: {
-    
-    marginTop:10,
-  },
   root: {
     flexGrow: 1,
   },
@@ -80,14 +76,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
    img: {
-     marginLeft:'100',
+     marginLeft:'10',
      objectFit:'cover',
-     height: 255,
+     height: 328,
      display: 'block',
-     maxWidth: 900,
+     maxWidth: 1243,
      overflow: 'hidden',
      width: '100%',
-     width:'80%',
+    
   },
 }));
 
@@ -136,7 +132,7 @@ function HomePage() {
       </AutoPlaySwipeableViews>
       <MobileStepper
         variant="dots"
-        steps={6}
+        steps={5}
         position="static"
         activeStep={activeStep}
         nextButton={
@@ -248,7 +244,7 @@ function HomePage() {
     </div>
       </div>
 
-      <div className="newsJogos2">
+      <div className="newsJogos3">
       <h3>Notícias de Jogos</h3>
       <div className={classes.root}>
       <Paper className={classes.paper}>
