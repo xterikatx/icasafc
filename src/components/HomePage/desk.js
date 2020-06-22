@@ -15,6 +15,9 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import Link from '@material-ui/core/Link';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
 {/* <script src="fonte.js"></script> */}
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -377,9 +380,18 @@ function HomePage() {
         </div>
       </section>
 
+    <React.Fragment>
+    <CssBaseline />
+      <Container maxWidth="sm">
+        <Typography component="div" style={{marginTop:100, marginLeft:-400,backgroundColor: '#fafafa', height: '15vh', width:'244.4%',}} />
+      </Container>
+        <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
+        Associa  o Desportiva Recreativa e Cultural Icasa
+        Icasafc.com - Todos os direitos reservados.
+        </Typography>
+    </React.Fragment>
     </div>
-
-  )
+  );
 }
 
 export default HomePage;
