@@ -220,3 +220,12 @@ textarea {
     font-weight: bold;
     font-size: 15px;
 }
+.logo {
+  margin-top: 1.1%;
+  height: 43px;
+  align-items: center;
+  text-align: center;
+  margin-left: 6%;
+  position: absolute;
+  cursor: pointer;
+}

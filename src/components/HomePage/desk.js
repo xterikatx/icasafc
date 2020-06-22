@@ -1,6 +1,5 @@
 import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-import AwsSliderStyles from 'react-awesome-slider/src/styles';
+import 'fontsource-roboto';
 import './styles.css';
 import './patrocinio.css';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -19,6 +18,10 @@ import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import '../Menu/MenuDesktop.css';
 import FontSizeChanger from 'react-font-size-changer';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import { createMuiTheme } from '@material-ui/core/styles';
+
 const logo = require('../../assets/logo.png');
 
 
@@ -53,9 +56,23 @@ const tutorialSteps = [
   },
 ];
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#757ce8',
+      main: '#3f50b5',
+      dark: '#002884',
+      contrastText: '#fff',
+    },
+  }
+});
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+  },
+  primary: {
+    main: '#fdd835',
   },
   paper: {
     padding: theme.spacing(2),
@@ -73,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '100%',
     maxHeight: '100%',
     objectFit:'cover',
+    WebkitBorderRadius: '10px',
   },
   header: {
     display: 'flex',
@@ -81,23 +99,26 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: theme.spacing(4),
     backgroundColor: theme.palette.background.default,
   },
-   img: {
-     marginLeft:'10',
-     objectFit:'cover',
-     height: 328,
+  es: {
+    height:70,
+    alignItems:'center',
+    backgroundColor:'#388E3C',
+    color:'white',
+  },
+  img: {
+    marginLeft:'10',
+    objectFit:'cover',
+    height: 328,
      display: 'block',
      maxWidth: 1243,
      overflow: 'hidden',
      width: '100%',
-    
-  },
+     WebkitBorderRadius: '20px',
+     
+    },
 }));
 
-const newPhoto = require('../../assets/foto5.jpg');
-const imagens = require('../../assets/banner.PNG');
-const imgs = require('../../assets/banner-slider.jpg');
 const ft = require('../../assets/foto5.jpg');
-
 
 function HomePage() {
   const theme = useTheme();
@@ -105,37 +126,44 @@ function HomePage() {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = tutorialSteps.length;
   const preventDefault = (event) => event.preventDefault();
-
-
+  
+  
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
-
+  
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-
+  
   const handleStepChange = (step) => {
     setActiveStep(step);
+  };
+  const [value, setValue] = React.useState(0);
+  
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
   };
   return (
     <div className="all_components">
       <header>
+      <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
-        <div className="head">
-          <ul class="ul">
-            <div class="margin">
-              <li className="font"><a class="" href="/home">Início</a></li>
-              <li  className="font"><a href="/">O clube</a></li>
-              <li  className="font"><a href="/Tabelas">Tabelas</a></li>
-              <li  className="font"><a href="/club">Notícias</a></li>
-              <li  className="font"><a href="/">Programação</a></li>
-              <li  className="font"><a href="/Midia">Mídia</a></li>
-              <li  className="font"><a href="/">Contato</a></li>
-              <li>
-                {/** COMPONENTE QUE AUMENTA VOL */}
-                <FontSizeChanger
-                  targets={['.font, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        indicatorColor="primary"
+        centered
+        className={classes.es}
+        >
+        <Tab className="tab" label="Início"  href="/home" />
+        <Tab className="tab" label="Tabelas" href="/Tabelas"/>
+        <Tab className="tab" label="Programação" />
+        <Tab className="tab" label="Mídia" />
+        <Tab className="tab" label="Contato" />
+        {/** COMPONENTE QUE AUMENTA VOL */}
+        <FontSizeChanger
+                  targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
                   onChange={(element, newValue, oldValue) => {
                     console.log(element, newValue, oldValue);
                   }}
@@ -144,24 +172,24 @@ function HomePage() {
                     range: 3
                   }}
                   customButtons={{
-                    up: <span style={{ 'fontSize': '36px' }}>A+</span>,
-                    down: <span style={{ 'fontSize': '20px' }}>A-</span>,
+                    up: <span style={{ 'fontSize': '20px' }}>A+</span>,
+                    down: <span style={{ 'fontSize': '15px' }}>A-</span>,
                     style: {
-                      backgroundColor: 'red',
-                      color: 'white',
+                      backgroundColor: '#fafafa',
+                      color: 'black',
                       WebkitBoxSizing: 'border-box',
                       WebkitBorderRadius: '5px',
-                      width: '60px'
+                      width: '60px',
+                      cursor:'pointer',
                     },
                     buttonsMargin: 10
                   }}
                 />
-              </li>
-            </div>
-          </ul>
-        </div>
+      </Tabs>
+    </Paper>
       </header>
-          <div className={classes.root}>
+      
+      <div className={classes.root}>
       <Paper square elevation={0} className={classes.header}>
         <Typography className='tett'>{tutorialSteps[activeStep].label}</Typography>
       </Paper>
