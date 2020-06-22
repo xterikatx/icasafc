@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -9,6 +9,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import FontSizeChanger from 'react-font-size-changer';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+
+const logo = require('../../assets/logo.png');
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
@@ -61,12 +67,26 @@ const rows = [
 
 const useStyles = makeStyles({
   root: {
-    width: '90%',
+   
   },
   container: {
     maxHeight: 1040,
     marginLeft: 65,
     marginTop: 10,
+    width: '90%',
+  },
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    height: 50,
+   
+  
+  },
+  es: {
+    height:70,
+    alignItems:'center',
+    backgroundColor:'#388E3C',
+    color:'white',
   },
 });
 
@@ -83,9 +103,57 @@ function StickyHeadTable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+ 
+  const [value, setValue] = React.useState(0);
 
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+  
   return (
     <Paper className={classes.root}>
+      <header>
+      <Paper className={classes.root}>
+        <img alt="Logo do icasa" className="logo" src={logo} />
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        indicatorColor="primary"
+        centered
+        className={classes.es}
+        >
+        <Tab className="tab" label="Início"  href="/home" />
+        <Tab className="tab" label="Tabelas" href="/Tabelas"/>
+        <Tab className="tab" label="Programação" />
+        <Tab className="tab" label="Mídia" href="/midia"/>
+        <Tab className="tab" label="Contato" />
+        {/** COMPONENTE QUE AUMENTA VOL */}
+        <FontSizeChanger
+                  targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+                  onChange={(element, newValue, oldValue) => {
+                    console.log(element, newValue, oldValue);
+                  }}
+                  options={{
+                    stepSize: 2,
+                    range: 3
+                  }}
+                  customButtons={{
+                    up: <span style={{ 'fontSize': '20px' }}>A+</span>,
+                    down: <span style={{ 'fontSize': '15px' }}>A-</span>,
+                    style: {
+                      backgroundColor: '#fafafa',
+                      color: 'black',
+                      WebkitBoxSizing: 'border-box',
+                      WebkitBorderRadius: '5px',
+                      width: '60px',
+                      cursor:'pointer',
+                    },
+                    buttonsMargin: 10
+                  }}
+                />
+      </Tabs>
+    </Paper>
+      </header>
       <Typography className='tii' href="/Club" gutterBottom variant="itle1">
       TABELA BRASILEIRÃO SERIE B
       </Typography>
