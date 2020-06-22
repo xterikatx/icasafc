@@ -160,6 +160,17 @@ a:focus, input:focus, button:focus, select:focus {
   -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
   box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
 }
+.newsJogos5{
+  background-color: white;
+  height: 570px;
+  width: 30%;
+  margin-left: 68%;
+  margin-top: -700px;
+  background-color: white;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+}
 .newsJogos3{
   background-color: white;
   height: 430px;
