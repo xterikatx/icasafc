@@ -2,17 +2,18 @@ import React from 'react';
 import './index.css';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme, emphasize, withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import Button from '@material-ui/core/Button';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import SwipeableViews from 'react-swipeable-views';
-import { autoPlay } from 'react-swipeable-views-utils';
 
+
+
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Chip from '@material-ui/core/Chip';
+import HomeIcon from '@material-ui/icons/Home';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const img5 = require('../../assets/foto5.jpg')
 const img1 = require('../../assets/foto1.jpg')
@@ -20,6 +21,22 @@ const img2 = require('../../assets/foto2.jpg')
 const img6 = require('../../assets/foto6.jpg')
 const img3 = require('../../assets/foto3.jpg')
 const ft = require('../../assets/foto5.jpg');
+
+const StyledBreadcrumb = withStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.grey[100],
+    height: theme.spacing(3),
+    color: theme.palette.grey[800],
+    fontWeight: theme.typography.fontWeightRegular,
+    '&:hover, &:focus': {
+      backgroundColor: theme.palette.grey[400],
+    },
+    '&:active': {
+      boxShadow: theme.shadows[1],
+      backgroundColor: emphasize(theme.palette.grey[300], 0.12),
+    },
+  },
+}))(Chip);
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -61,6 +78,11 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
+  function handleClick(event) {
+    event.preventDefault();
+    console.info('You clicked a breadcrumb.');
+  }
+
 function News() {
     const theme = useTheme();
     const classes = useStyles();
@@ -68,15 +90,23 @@ function News() {
   
   return(
   <div>
-        <Link style={{marginLeft: '90px',}} href="/home" color="inherit" variant="subtitle2">
-            {'Inicio'}
-        </Link>
-        <Link color="inherit" variant="subtitle2">
-            {' > '}
-        </Link>
-        <Link href="/Noticia" color="inherit" variant="subtitle2">
-            {'Noticia'}
-        </Link>
+    <Breadcrumbs style={{marginLeft: '90px',}} style={{marginLeft: '90px',}}aria-label="breadcrumb">
+      <StyledBreadcrumb
+        component="a"
+        href="#"
+        label="Home"
+        icon={<HomeIcon fontSize="small" />}
+        onClick={handleClick}
+      />
+      <StyledBreadcrumb component="a" href="#" label="Catalog" onClick={handleClick} />
+      <StyledBreadcrumb
+        label="Accessories"
+        deleteIcon={<ExpandMoreIcon />}
+        onClick={handleClick}
+        onDelete={handleClick}
+      />
+    </Breadcrumbs>
+
     <div style={{marginLeft: '90px', width: '740px'}}>
         <a><h1 style={{marginTop: 10, marginBottom:10,}}>Barulhos estranhos no céu assustam pessoas de todo o mundo</h1></a>
         <Typography style={{ marginBottom:15,}} className="txtnot" variant="body1" color="initial">
@@ -97,10 +127,7 @@ function News() {
             constatou que ele foi eficiente na eliminação de 99,9% das amostras de dois tipos de
             vírus em ambientes fechados e com alto fluxo de pessoas – sendo que um deles
             possui semelhanças com o Sars-CoV-2, causador da covid-19.
-        </Typography>
-    </div>
-    <div style={{height: '3vh', marginLeft: '5%', width: '55%', marginTop: '30px', lineHeight: 1.6}}>
-        <Typography className="txtnot" variant="body1" color="initial">
+       
             A desenvolvedora de soluções tecnológicas com gerador de ozônio (O3) pode ter
             encontrado uma nova arma contra o coronavírus. Após realizar testes com o gás
             no laboratório da Universidade Federal de Santa Catarina, a Wier, startup em questão,

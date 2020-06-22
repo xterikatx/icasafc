@@ -59,29 +59,8 @@ h4 a {
     color: #8B8B8B;
 }
 
-/* CTA */
-.cta {
-  background-color: #424040;
-  /* height: 50px; */
-  color: rgba(255, 255, 255, 0.75);
-  background-attachment: fixed;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.712), rgba(0, 0, 0, 0.651)), url('../../assets/foto8.png');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  text-align: center;
-  padding: 50px;
-  z-index: 1;
-  color: white;
-  top: 10vh;
-  margin:0;
-  clear: both;
-}
 
-.img-address{
-  height: 35px;
-}
+
 
 
 .newstwo{

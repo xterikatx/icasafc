@@ -114,7 +114,7 @@ h4 a {
 }
 
 .img-address{
-  height: 35px;
+  height: 65px;
 }
 
 
@@ -152,6 +152,7 @@ a:focus, input:focus, button:focus, select:focus {
 .newsJogoss{
   background-color: white;
   height: 430px;
+  min-width: 180px;
   width: 30%;
   margin-left: 4%;
   margin-top: 40px;
@@ -173,7 +174,8 @@ a:focus, input:focus, button:focus, select:focus {
 }
 .newsJogos3{
   background-color: white;
-  height: 430px;
+  height: 100%px;
+  min-width: 180px;
   width: 30%;
   margin-left: 37%;
   margin-top: -431px;
