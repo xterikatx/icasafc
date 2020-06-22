@@ -17,6 +17,10 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import '../Menu/MenuDesktop.css';
+import FontSizeChanger from 'react-font-size-changer';
+const logo = require('../../assets/logo.png');
+
 
 {/* <script src="fonte.js"></script> */}
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -116,6 +120,47 @@ function HomePage() {
   };
   return (
     <div className="all_components">
+      <header>
+        <img alt="Logo do icasa" className="logo" src={logo} />
+        <div className="head">
+          <ul class="ul">
+            <div class="margin">
+              <li className="font"><a class="" href="/home">Início</a></li>
+              <li  className="font"><a href="/">O clube</a></li>
+              <li  className="font"><a href="/Tabelas">Tabelas</a></li>
+              <li  className="font"><a href="/club">Notícias</a></li>
+              <li  className="font"><a href="/">Programação</a></li>
+              <li  className="font"><a href="/Midia">Mídia</a></li>
+              <li  className="font"><a href="/">Contato</a></li>
+              <li>
+                {/** COMPONENTE QUE AUMENTA VOL */}
+                <FontSizeChanger
+                  targets={['.font, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+                  onChange={(element, newValue, oldValue) => {
+                    console.log(element, newValue, oldValue);
+                  }}
+                  options={{
+                    stepSize: 2,
+                    range: 3
+                  }}
+                  customButtons={{
+                    up: <span style={{ 'fontSize': '36px' }}>A+</span>,
+                    down: <span style={{ 'fontSize': '20px' }}>A-</span>,
+                    style: {
+                      backgroundColor: 'red',
+                      color: 'white',
+                      WebkitBoxSizing: 'border-box',
+                      WebkitBorderRadius: '5px',
+                      width: '60px'
+                    },
+                    buttonsMargin: 10
+                  }}
+                />
+              </li>
+            </div>
+          </ul>
+        </div>
+      </header>
           <div className={classes.root}>
       <Paper square elevation={0} className={classes.header}>
         <Typography className='tett'>{tutorialSteps[activeStep].label}</Typography>
@@ -161,9 +206,7 @@ function HomePage() {
         Notícias de Time
       </Typography>
       {/* <h3>Notícias de Time</h3> */}
-      <button onClick="fonte('a');">A+</button>
-      <button onClick="fonte('n');" title="Normal">A</button>
-      <button onClick="fonte('d');">A-</button>
+
       <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
@@ -175,16 +218,16 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Link href="/Noticia" color="inherit" variant="h6">
+              <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
               {'Titulo da Noticia'}
               </Link>
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
                   A descrição das noticias fica localizado aqui
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" className="datanoticia">
                   10/10/20
                 </Typography>
               </Grid>
@@ -209,16 +252,16 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
               {'Titulo da Noticia'}
               </Link>
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary">
+                <Typography variant="body2" gutterBottom color="textSecondary" className=".descricaonoticia ">
                   A descrição das noticias fica localizado aqui
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" className="iddanoticia">
                   ID: 1030114
                 </Typography>
               </Grid>
@@ -242,16 +285,16 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
               {'Titulo da Noticia'}
               </Link>
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
                   A descrição das noticias fica localizado aqui
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" className="iddanoticia">
                   ID: 1030114
                 </Typography>
               </Grid>
@@ -264,7 +307,7 @@ function HomePage() {
       </div>
 
       <div className="newsJogos3">
-      <h3>Notícias de Jogos</h3>
+      <h3 className="titulodanoticia">Notícias de Jogos</h3>
       <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
@@ -276,16 +319,16 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
               {'Titulo da Noticia'}
               </Link>
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
                   A descrição das noticias fica localizado aqui
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" className="iddanoticia">
                   ID: 1030114
                 </Typography>
               </Grid>
@@ -310,16 +353,16 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
               {'Titulo da Noticia'}
               </Link>
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
                   A descrição das noticias fica localizado aqui
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" className="iddanoticia">
                   ID: 1030114
                 </Typography>
               </Grid>
@@ -343,16 +386,16 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6">
+              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
               {'Titulo da Noticia'}
               </Link>
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
                   A descrição das noticias fica localizado aqui
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="textSecondary" className="iddanoticia">
                   ID: 1030114
                 </Typography>
               </Grid>
@@ -366,7 +409,7 @@ function HomePage() {
       </div>
 
       <div className="sponsorship">
-        <h3>Patrocinio</h3>
+        <h3 className="titulodanoticia">Patrocinio</h3>
         <iframe width="310" height="175" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <iframe width="310" height="175" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
