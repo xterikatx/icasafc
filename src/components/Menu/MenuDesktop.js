@@ -21,6 +21,7 @@ export default function MenuDesktop() {
               <li  className="font"><a href="/Midia">Mídia</a></li>
               <li  className="font"><a href="/">Contato</a></li>
               <li>
+                {/** COMPONENTE QUE AUMENTA VOL */}
                 <FontSizeChanger
                   targets={['.font']} //aqui deve ficar as class que tem que alterar
                   onChange={(element, newValue, oldValue) => {
