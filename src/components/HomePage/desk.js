@@ -21,6 +21,8 @@ import FontSizeChanger from 'react-font-size-changer';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { createMuiTheme } from '@material-ui/core/styles';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 const logo = require('../../assets/logo.png');
 
@@ -115,6 +117,10 @@ const useStyles = makeStyles((theme) => ({
      width: '100%',
      WebkitBorderRadius: '20px',
      
+    },
+    grid: {
+      marginLeft:10,
+      height:100,
     },
 }));
 
@@ -456,8 +462,12 @@ function HomePage() {
       <Container maxWidth="sm">
         <Typography component="div" style={{marginTop:100, marginLeft:-400,backgroundColor: '#fafafa', height: '15vh', width:'244.4%',}} />
       </Container>
+      <Grid  style={{marginLeft: '10px', marginBottom: 5,}}>
+      <FacebookIcon />
+      <InstagramIcon />
+      </Grid>
         <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
-        Associa  o Desportiva Recreativa e Cultural Icasa
+        Associação Desportiva Recreativa e Cultural Icasa
         Icasafc.com - Todos os direitos reservados.
         </Typography>
     </React.Fragment>

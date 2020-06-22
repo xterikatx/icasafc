@@ -190,13 +190,7 @@ function StickyHeadTable() {
         icon={<HomeIcon fontSize="small" />}
         onClick={handleClick}
       />
-      <StyledBreadcrumb component="a" href="#" label="Catalog" onClick={handleClick} />
-      <StyledBreadcrumb
-        label="Accessories"
-        deleteIcon={<ExpandMoreIcon />}
-        onClick={handleClick}
-        onDelete={handleClick}
-      />
+      <StyledBreadcrumb component="a" href="#" label="Tabelas" onClick={handleClick} />
     </Breadcrumbs>
       <Typography className='tii' href="/Club" gutterBottom variant="itle1">
       TABELA BRASILEIRÃO SERIE B
