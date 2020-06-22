@@ -8,6 +8,9 @@ import Paper from '@material-ui/core/Paper';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import FontSizeChanger from 'react-font-size-changer';
 
 
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
@@ -21,6 +24,8 @@ const img2 = require('../../assets/foto2.jpg')
 const img6 = require('../../assets/foto6.jpg')
 const img3 = require('../../assets/foto3.jpg')
 const ft = require('../../assets/foto5.jpg');
+const logo = require('../../assets/logo.png');
+
 
 const StyledBreadcrumb = withStyles((theme) => ({
   root: {
@@ -66,7 +71,13 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: theme.spacing(4),
       backgroundColor: theme.palette.background.default,
     },
-     img: {
+    es: {
+      height:70,
+      alignItems:'center',
+      backgroundColor:'#388E3C',
+      color:'white',
+    },
+    img: {
        marginLeft:'10',
        objectFit:'cover',
        height: 328,
@@ -74,36 +85,81 @@ const useStyles = makeStyles((theme) => ({
        maxWidth: 1243,
        overflow: 'hidden',
        width: '100%',
-      
-    },
+       
+      },
   }));
-
   function handleClick(event) {
     event.preventDefault();
     console.info('You clicked a breadcrumb.');
   }
 
-function News() {
+  function News() {
     const theme = useTheme();
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
   
-  return(
+    const [value, setValue] = React.useState(0);
+    const handleChange = (event, newValue) => {
+    setValue(newValue);
+    };
+
+    return(
   <div>
-    <Breadcrumbs style={{marginLeft: '90px',}} style={{marginLeft: '90px',}}aria-label="breadcrumb">
+    <header>
+      <Paper className={classes.root}>
+        <img alt="Logo do icasa" className="logo" src={logo} />
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        indicatorColor="primary"
+        centered
+        className={classes.es}
+        >
+        <Tab className="tab" label="Início"  href="/home" />
+        <Tab className="tab" label="Tabelas" href="/Tabelas"/>
+        <Tab className="tab" label="Programação" />
+        <Tab className="tab" label="Mídia" />
+        <Tab className="tab" label="Contato" />
+        {/** COMPONENTE QUE AUMENTA VOL */}
+        <FontSizeChanger
+                  targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+                  onChange={(element, newValue, oldValue) => {
+                    console.log(element, newValue, oldValue);
+                  }}
+                  options={{
+                    stepSize: 2,
+                    range: 3
+                  }}
+                  customButtons={{
+                    up: <span style={{ 'fontSize': '20px' }}>A+</span>,
+                    down: <span style={{ 'fontSize': '15px' }}>A-</span>,
+                    style: {
+                      backgroundColor: '#fafafa',
+                      color: 'black',
+                      WebkitBoxSizing: 'border-box',
+                      WebkitBorderRadius: '5px',
+                      width: '60px',
+                      cursor:'pointer',
+                    },
+                    buttonsMargin: 10
+                  }}
+                />
+      </Tabs>
+    </Paper>
+      </header>
+
+    <Breadcrumbs style={{marginLeft: '90px', marginTop: '15px',}} aria-label="breadcrumb">
       <StyledBreadcrumb
         component="a"
-        href="#"
+        href="/home"
         label="Home"
         icon={<HomeIcon fontSize="small" />}
         onClick={handleClick}
       />
-      <StyledBreadcrumb component="a" href="#" label="Catalog" onClick={handleClick} />
+      <StyledBreadcrumb component="a" href="#" label="Notícias" onClick={handleClick} />
       <StyledBreadcrumb
-        label="Accessories"
-        deleteIcon={<ExpandMoreIcon />}
+        label="Barulhos estranhos no céu assustam pessoas de todo o mundo"
         onClick={handleClick}
-        onDelete={handleClick}
       />
     </Breadcrumbs>
 
