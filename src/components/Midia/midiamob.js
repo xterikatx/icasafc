@@ -8,9 +8,14 @@ const img3 = require('../../assets/foto3.jpg')
 const img6 = require('../../assets/foto6.jpg')
 const img5 = require('../../assets/foto5.jpg')
 
+
+// const logo = require('../../assets/logo.png');
+
 function Midia() {
+
   return (
     <div className="body">
+
       <div className="wrapper">
         
         

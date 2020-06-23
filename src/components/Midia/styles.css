@@ -25,24 +25,28 @@
   background-size:cover;
 }
 /* Container */
-.container1{
+.container1 {
   background-color: #FFFFFF;
   width: 1286px;
   height: 47px;
   margin-top: 10px;
+  margin-left: -30px;
 }
-.container2{
+.container2 {
   width: 1286px;
   height: 381px;
   background-color: rgba(0, 145, 47, 0.4);
+  margin-left: -30px;
 }
-.container3{
+.container3 {
   background-color: #FFFFFF;
   width: 1286px;
   height: 47px;
   margin-top: 10px;
+  margin-left: -30px;
 }
-.container4{
+.container4 {
+  margin-left: -30px;
   width: 1286px;
   height: 271 px;
   background-color: rgba(0, 145, 47, 0.4);
@@ -114,4 +118,10 @@ footer div {
   margin-top: 10px;
   max-height: 875px;
   background-color: rgba(23, 187, 8, 0.589);
+}
+
+.aces {
+  padding: 0px 0px 0px 50px;
+  display: inline;
+  background-color: white;
 }
