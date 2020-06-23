@@ -142,6 +142,9 @@ function HomePage() {
       <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
         Ir para Mídia [ M ]
       </Link>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "N" href="/#ancora">
+        Ir para Notícias do Time [ N ]
+      </Link>
 
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
@@ -226,7 +229,7 @@ function HomePage() {
       {/*section de noticias aqui*/}
 
       <div className="newsJogoss">
-      <Typography className="txtnot" variant="h6" color="initial">
+      <Typography className="txtnot" id="ancora"  variant="h6" color="initial">
         Notícias do Time
       </Typography>
       {/* <h3>Notícias de Time</h3> */}
@@ -282,7 +285,7 @@ function HomePage() {
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className=".descricaonoticia ">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
                   A descrição das noticias fica localizado aqui
                 </Typography>
                 <Typography variant="body2" color="textSecondary" className="iddanoticia">

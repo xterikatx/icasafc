@@ -279,7 +279,7 @@ function HomePage() {
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className=".descricaonoticia ">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
                   A descrição das noticias fica localizado aqui
                 </Typography>
                 <Typography variant="body2" color="textSecondary" className="iddanoticia">
@@ -311,7 +311,7 @@ function HomePage() {
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className=".descricaonoticia ">
+                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
                   A descrição das noticias fica localizado aqui
                 </Typography>
                 <Typography variant="body2" color="textSecondary" className="iddanoticia">
