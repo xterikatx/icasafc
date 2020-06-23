@@ -11,6 +11,7 @@ import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Chip from '@material-ui/core/Chip';
 import HomeIcon from '@material-ui/icons/Home';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Typography from '@material-ui/core/Typography';
 
 const logo = require('../../assets/logo.png')
 const img1 = require('../../assets/foto1.jpg')
@@ -210,6 +211,12 @@ function Midia() {
 		</div>
 
       </div>
+      <footer>
+      <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
+        Associação Desportiva Recreativa e Cultural Icasa
+        Icasafc.com - Todos os direitos reservados.
+        </Typography>
+      </footer>
     </div>
   );
 }

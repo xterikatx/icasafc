@@ -261,3 +261,8 @@ textarea {
   padding: 0px 0px 0px 50px;
   display: inline;
 }
+
+footer {
+  height: 100px;
+  background-color: red;
+}
