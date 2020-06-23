@@ -266,3 +266,7 @@ footer {
   height: 100px;
   background-color: red;
 }
+
+.linkdanoticia:hover {
+  color:rgb(17, 187, 17);  
+}
