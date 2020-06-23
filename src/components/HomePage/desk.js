@@ -193,7 +193,7 @@ function HomePage() {
               <Tab className="tab b" label="Início" href="/home" />
               <Tab className="tab" label="Tabelas" href="/Tabelas" accessKey="w" />
               <Tab className="tab" label="Programação" />
-              <Tab className="tab" label="Mídia" href="/midia" />
+              <Tab className="tab" label="Mídia" href="/Midia" />
               <Tab className="tab" label="Contato" />
               {/** COMPONENTE QUE AUMENTA VOL */}
               <FontSizeChanger

@@ -28,6 +28,10 @@ import MailIcon from '@material-ui/icons/Mail';
 import { MenuContainer } from '../styles';
 import Link from '@material-ui/core/Link';
 
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import Container from '@material-ui/core/Container';
+
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 const newPhoto = require('../../assets/foto5.jpg');
@@ -381,6 +385,21 @@ function HomePage() {
           <p>Fone-Fax: (88)3571- 3060.</p>
         </div>
       </section>
+
+      <React.Fragment>
+    <CssBaseline />
+      <Container maxWidth="sm">
+        <Typography component="div" style={{marginTop:100, }} />
+      </Container>
+      <Grid  style={{marginLeft: '30px', marginBottom: 5,}}>
+      <FacebookIcon />
+      <InstagramIcon />
+      </Grid>
+        <Typography style={{ margintTop: 30, padding:'10px',}} variant="body1" color="initial">
+        Associação Desportiva Recreativa e Cultural Icasa
+        Icasafc.com - Todos os direitos reservados.
+        </Typography>
+    </React.Fragment>
 
     </div>
 
