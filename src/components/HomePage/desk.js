@@ -24,22 +24,9 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import styled from "@emotion/styled";
-
-
 const logo = require('../../assets/logo.png');
 
-const Wrapper = styled("div")`
-  background: ${props => props.theme.background};
-  width: 100vw;
-  height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
-  h1 {
-    color: ${props => props.theme.body};
-  }
-  button {
-    color: ${props => props.theme.body};
-  }
-`;
+
 
 {/* <script src="fonte.js"></script> */ }
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -139,6 +126,8 @@ function HomePage() {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
+
+  
 
   const handleStepChange = (step) => {
     setActiveStep(step);

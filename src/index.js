@@ -1,11 +1,12 @@
-import React from 'react';
+import React,{useState} from 'react';
 import ReactDOM from 'react-dom';
+import { jsx } from "@emotion/core";
+
 import App from './App';
-import { ThemeProvider } from "./ThemeContext";
 
 ReactDOM.render(
-  <ThemeProvider>
+  <React.Fragment>
     <App />
-  </ThemeProvider>,
+  </React.Fragment>,
   document.getElementById('root')
 );
