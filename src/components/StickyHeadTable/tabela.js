@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
@@ -9,7 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, useTheme, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import FontSizeChanger from 'react-font-size-changer';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
@@ -25,6 +25,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { deepOrange, orange, lightBlue, deepPurple } from '@material-ui/core/colors';
+import { Switch } from '@material-ui/core';
 
 const logo = require('../../assets/logo.png');
 
@@ -94,6 +96,7 @@ const useStyles = makeStyles({
    
   
   },
+  
   es: {
     height:70,
     alignItems:'center',
@@ -114,6 +117,10 @@ const StyledBreadcrumb = withStyles((theme) => ({
     '&:active': {
       boxShadow: theme.shadows[1],
       backgroundColor: emphasize(theme.palette.grey[300], 0.12),
+    },
+    links: {
+      margin: 10,
+      color:theme.palette.background.default,
     },
   },
 }))(Chip);
@@ -142,8 +149,30 @@ function StickyHeadTable() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "dark" : "light";
+  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
+  const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: palletType,
+      primary: {
+        main: mainPrimaryColor,
+
+      },
+      secondary: {
+        main: mainSecondaryColor
+      }
+    }
+  });
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
+
   
   return (
+    <ThemeProvider theme={darkTheme}>
     <Paper className={classes.root}>
       <header>
       <Link className='aces' variant="body2" color="inherit" accessKey = "H" href="/home" >
@@ -155,6 +184,11 @@ function StickyHeadTable() {
       <Link className='aces' variant="body2" color="inherit" accessKey = "T" href="/Tabelas/#ancora2">
         Ir para a Tabela [ T ]
       </Link>
+      <Link className={classes.links}  variant="body2" color="inherit" >
+            Ativar alto contraste →
+        <Switch checked={darkState} onChange={handleThemeChange} />
+
+          </Link>
       
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
@@ -270,6 +304,7 @@ function StickyHeadTable() {
         </Typography>
     </React.Fragment>
     </Paper>
+    </ThemeProvider>
   );
 }
 export default StickyHeadTable;
