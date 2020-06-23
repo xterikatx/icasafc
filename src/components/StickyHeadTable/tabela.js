@@ -169,7 +169,7 @@ function StickyHeadTable() {
         <Tab className="tab" label="Contato" />
         {/** COMPONENTE QUE AUMENTA VOL */}
         <FontSizeChanger
-                  targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+                  targets={['.font, .tii, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
                   onChange={(element, newValue, oldValue) => {
                     console.log(element, newValue, oldValue);
                   }}
