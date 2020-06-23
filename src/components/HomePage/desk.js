@@ -237,7 +237,7 @@ function HomePage() {
 
       <div className="newsJogoss">
       <Typography className="txtnot" variant="h6" color="initial">
-        Notícias de Time
+        Notícias do Time
       </Typography>
       {/* <h3>Notícias de Time</h3> */}
 
@@ -341,7 +341,9 @@ function HomePage() {
       </div>
 
       <div className="newsJogos3">
-      <h3 className="titulodanoticia">Notícias de Jogos</h3>
+      <Typography className="txtnot" variant="h6" color="initial">
+        Notícias de Jogos
+      </Typography>
       <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
