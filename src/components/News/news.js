@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { makeStyles, useTheme, emphasize, withStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme, emphasize, withStyles, createMuiTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import MobileStepper from '@material-ui/core/MobileStepper';
@@ -21,6 +21,8 @@ import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { orange, lightBlue, deepOrange, deepPurple } from '@material-ui/core/colors';
+import { Switch, ThemeProvider } from '@material-ui/core';
 
 const img5 = require('../../assets/foto5.jpg')
 const img1 = require('../../assets/foto1.jpg')
@@ -75,6 +77,9 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: theme.spacing(4),
       backgroundColor: theme.palette.background.default,
     },
+    links: {
+      margin: 10
+    },
     es: {
       height:70,
       alignItems:'center',
@@ -106,22 +111,38 @@ const useStyles = makeStyles((theme) => ({
     const handleChange = (event, newValue) => {
     setValue(newValue);
     };
-
+    const [darkState, setDarkState] = useState(false);
+    const palletType = darkState ? "dark" : "light";
+    const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
+    const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+    const darkTheme = createMuiTheme({
+      palette: {
+        type: palletType,
+        primary: {
+          main: mainPrimaryColor,
+  
+        },
+        secondary: {
+          main: mainSecondaryColor
+        }
+      }
+    });
+    const handleThemeChange = () => {
+      setDarkState(!darkState);
+    };
     return(
-  <div>
+  <ThemeProvider theme={darkTheme}>
     <header>
-    <Link className='aces' variant="body2" color="inherit" accessKey = "H" href="/home" >
-        Ir para o Início [ H ]
+    <Link className={classes.links} variant="body2" color="inherit" accessKey="H" href="/home" >
+            Ir para o Início [ H ]
       </Link>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
-        Ir para Mídia [ M ]
+          <Link className={classes.links} variant="body2" color="inherit" accessKey="M" href="/midia">
+            Ir para Mídia [ M ]
       </Link>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "T" href="/Tabelas/#ancora2">
-        Ir para a Tabela [ T ]
+          <Link className={classes.links} variant="body2" color="inherit" accessKey="N" href="/#ancora">
+            Ir para Notícias do Time [ N ]
       </Link>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "C" href="/Noticia/#ancora3">
-        Ir para o conteúdo [ C ]
-      </Link>
+          <Switch checked={darkState} onChange={handleThemeChange} />
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
       <Tabs
@@ -357,7 +378,7 @@ const useStyles = makeStyles((theme) => ({
             Icasafc.com - Todos os direitos reservados.
         </Typography>
         </React.Fragment>
-  </div>
+  </ThemeProvider>
   );
 }
 

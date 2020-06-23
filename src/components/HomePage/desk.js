@@ -84,8 +84,8 @@ const useStyles = makeStyles((theme) => ({
     height: 100,
     objectFit: 'cover',
   },
-  links:{
-    margin:10
+  links: {
+    margin: 10
   },
   imgs: {
     margin: 'auto',
@@ -133,7 +133,7 @@ function HomePage() {
       type: palletType,
       primary: {
         main: mainPrimaryColor,
-        
+
       },
       secondary: {
         main: mainSecondaryColor
@@ -183,7 +183,7 @@ function HomePage() {
           <Link className={classes.links} variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
-      <Switch checked={darkState} onChange={handleThemeChange} />
+          <Switch checked={darkState} onChange={handleThemeChange} />
           <Paper className={classes.root}>
             <img alt="Logo do icasa" className="logo" src={logo} />
             <Tabs
@@ -191,7 +191,7 @@ function HomePage() {
               onChange={handleChange}
               indicatorColor="primary"
               centered
-              
+              className={classes.es}
             >
               <Tab className="tab b" label="Início" href="/home" />
               <Tab className="tab" label="Tabelas" href="/Tabelas" accessKey="w" />
