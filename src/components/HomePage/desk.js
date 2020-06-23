@@ -26,7 +26,6 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 
 const logo = require('../../assets/logo.png');
 
-
 {/* <script src="fonte.js"></script> */}
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -57,17 +56,6 @@ const tutorialSteps = [
       'https://images.unsplash.com/flagged/photo-1550413231-202a9d53a331?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80',
   },
 ];
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#757ce8',
-      main: '#3f50b5',
-      dark: '#002884',
-      contrastText: '#fff',
-    },
-  }
-});
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -116,11 +104,6 @@ const useStyles = makeStyles((theme) => ({
      overflow: 'hidden',
      width: '100%',
      WebkitBorderRadius: '20px',
-     
-    },
-    grid: {
-      marginLeft:10,
-      height:100,
     },
 }));
 
@@ -153,6 +136,13 @@ function HomePage() {
   return (
     <div className="all_components">
       <header>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "H" href="/home" >
+        Ir para o Início [ H ]
+      </Link>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
+        Ir para Mídia [ M ]
+      </Link>
+
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
       <Tabs
@@ -162,35 +152,35 @@ function HomePage() {
         centered
         className={classes.es}
         >
-        <Tab className="tab" label="Início"  href="/home" />
-        <Tab className="tab" label="Tabelas" href="/Tabelas"/>
+        <Tab className="tab b" label="Início"  href="/home" />
+        <Tab className="tab" label="Tabelas" href="/Tabelas" accessKey = "w" />
         <Tab className="tab" label="Programação" />
         <Tab className="tab" label="Mídia" />
         <Tab className="tab" label="Contato" />
         {/** COMPONENTE QUE AUMENTA VOL */}
         <FontSizeChanger
-                  targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
-                  onChange={(element, newValue, oldValue) => {
-                    console.log(element, newValue, oldValue);
-                  }}
-                  options={{
-                    stepSize: 2,
-                    range: 3
-                  }}
-                  customButtons={{
-                    up: <span style={{ 'fontSize': '20px' }}>A+</span>,
-                    down: <span style={{ 'fontSize': '15px' }}>A-</span>,
-                    style: {
-                      backgroundColor: '#fafafa',
-                      color: 'black',
-                      WebkitBoxSizing: 'border-box',
-                      WebkitBorderRadius: '5px',
-                      width: '60px',
-                      cursor:'pointer',
-                    },
-                    buttonsMargin: 10
-                  }}
-                />
+        targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+        onChange={(element, newValue, oldValue) => {
+          console.log(element, newValue, oldValue);
+          }}
+          options={{
+            stepSize: 2,
+            range: 3
+          }}
+          customButtons={{
+            up: <span style={{ 'fontSize': '20px' }}>A+</span>,
+            down: <span style={{ 'fontSize': '15px' }}>A-</span>,
+          style: {
+            backgroundColor: '#fafafa',
+            color: 'black',
+            WebkitBoxSizing: 'border-box',
+            WebkitBorderRadius: '5px',
+            width: '60px',
+            cursor:'pointer',
+          },
+            buttonsMargin: 10
+          }}
+        />
       </Tabs>
     </Paper>
       </header>
@@ -246,7 +236,7 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+              <img className={classes.imgs} alt="Imagen com dois jogadores de futebol" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -280,7 +270,7 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -313,7 +303,7 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -349,7 +339,7 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -383,7 +373,7 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -416,7 +406,7 @@ function HomePage() {
         <Grid container spacing={2}>
           <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen notícia jogadores" src={ft} />
+              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>

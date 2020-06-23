@@ -18,7 +18,13 @@ import { emphasize, withStyles } from '@material-ui/core/styles';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Chip from '@material-ui/core/Chip';
 import HomeIcon from '@material-ui/icons/Home';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Link from '@material-ui/core/Link';
+
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 const logo = require('../../assets/logo.png');
 
@@ -131,7 +137,7 @@ function StickyHeadTable() {
     setPage(0);
   };
  
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = React.useState(1);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -140,6 +146,13 @@ function StickyHeadTable() {
   return (
     <Paper className={classes.root}>
       <header>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "H" href="/home" >
+        Ir para o Início [ H ]
+      </Link>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
+        Ir para Mídia [ M ]
+      </Link>
+      
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
       <Tabs
@@ -149,8 +162,8 @@ function StickyHeadTable() {
         centered
         className={classes.es}
         >
-        <Tab className="tab" label="Início"  href="/home" />
-        <Tab className="tab" label="Tabelas" href="/Tabelas"/>
+        <Tab className="tab" label="Início"  href="/home" accessKey = "w" />
+        <Tab className="tab a" label="Tabelas" href="/Tabelas" />
         <Tab className="tab" label="Programação" />
         <Tab className="tab" label="Mídia" href="/midia"/>
         <Tab className="tab" label="Contato" />
@@ -237,6 +250,22 @@ function StickyHeadTable() {
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
+
+      {/* Footer */}
+    <React.Fragment>
+    <CssBaseline />
+      <Container maxWidth="sm" >
+        <Typography component="div"/>
+      </Container >
+      <Grid  style={{marginTop: 30, marginLeft:10,}}>
+      <FacebookIcon />
+      <InstagramIcon />
+      </Grid>
+        <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
+        Associação Desportiva Recreativa e Cultural Icasa
+        Icasafc.com - Todos os direitos reservados.
+        </Typography>
+    </React.Fragment>
     </Paper>
   );
 }

@@ -162,6 +162,21 @@ a:focus, input:focus, button:focus, select:focus {
   box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
   border-radius: 14px;
 }
+
+.newsJogossss{
+  background-color: white;
+  height: 100%;
+  min-width: 180px;
+  width: 90%;
+  margin-left: 2%;
+  margin-top: 60px;
+  background-color: white;
+  -webkit-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+  box-shadow: 1px 3px 5px 0px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
 .newsJogos5{
   background-color: white;
   height: 570px;
@@ -232,4 +247,17 @@ textarea {
   margin-left: 6%;
   position: absolute;
   cursor: pointer;
+}
+
+.tab.a {
+  color:rgb(255, 251, 0);
+}
+
+.tab.b {
+  color:rgb(255, 251, 0);
+}
+
+.aces {
+  padding: 0px 0px 0px 50px;
+  display: inline;
 }
