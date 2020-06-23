@@ -36,6 +36,9 @@ const Wrapper = styled("div")`
   h1 {
     color: ${props => props.theme.body};
   }
+  button {
+    color: ${props => props.theme.body};
+  }
 `;
 
 {/* <script src="fonte.js"></script> */ }
@@ -160,9 +163,9 @@ function HomePage() {
           <Link className='aces' variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
-        <Link className='aces' variant="body2" color="inherit" onClick={() => themeState.toggle()}>
+       <button className= 'aces' variant="body2" color="inherit" onClick={() => themeState.toggle()}>
         {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-      </Link>
+      </button>
       
 
           <Paper className={classes.root}>
