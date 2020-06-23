@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import Link from '@material-ui/core/Link';
 import Paper from '@material-ui/core/Paper';
@@ -6,12 +6,15 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import FontSizeChanger from 'react-font-size-changer';
 import { makeStyles, useTheme, withStyles, emphasize } from '@material-ui/core/styles';
+import TableFooter from '@material-ui/core/TableFooter';
 
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Chip from '@material-ui/core/Chip';
 import HomeIcon from '@material-ui/icons/Home';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Typography from '@material-ui/core/Typography';
+import { Switch, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { orange, deepOrange, lightBlue, deepPurple } from '@material-ui/core/colors';
 
 const logo = require('../../assets/logo.png')
 const img1 = require('../../assets/foto1.jpg')
@@ -19,6 +22,7 @@ const img2 = require('../../assets/foto2.jpg')
 const img3 = require('../../assets/foto3.jpg')
 const img6 = require('../../assets/foto6.jpg')
 const img5 = require('../../assets/foto5.jpg')
+const backgroundImage = require('../../assets//Torcida-do-time-do-Icasa-5.jpg')
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,6 +72,19 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     WebkitBorderRadius: '20px',
   },
+  body: {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+  },
+  links: {
+    margin: 10,
+    color:theme.palette.background.default,
+  },
+  footer:{
+    height: 120,
+    width: '100%',
+    backgroundColor: theme.palette.background.default
+  }
 }));
 
 const StyledBreadcrumb = withStyles((theme) => ({
@@ -94,23 +111,48 @@ function handleClick(event) {
 function Midia() {
   const classes = useStyles();
   const [value, setValue] = React.useState(3);
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "dark" : "light";
+  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
+  const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: palletType,
+      primary: {
+        main: mainPrimaryColor,
+
+      },
+      secondary: {
+        main: mainSecondaryColor
+      }
+    }
+  });
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
   return (
-    <div className="body">
-            <header>
-          <Link className='aces' variant="body2" color="inherit" accessKey="H" href="/home" >
+    <ThemeProvider theme={darkTheme} >
+      <div className={classes.body}>
+        <header>
+          <Link className={classes.links}  variant="body2" color="inherit" accessKey="H" href="/home" >
             Ir para o Início [ H ]
       </Link>
-          <Link className='aces' variant="body2" color="inherit" accessKey="M" href="/midia">
+          <Link className={classes.links}  variant="body2" color="inherit" accessKey="M" href="/midia">
             Ir para Mídia [ M ]
       </Link>
-          <Link className='aces' variant="body2" color="inherit" accessKey="N" href="/#ancora">
+          <Link className={classes.links}  variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
-      
+          <Link className={classes.links}  variant="body2" color="inherit" >
+            Ativar alto contraste →
+        <Switch checked={darkState} onChange={handleThemeChange} />
+
+          </Link>
+
           <Paper className={classes.root}>
             <img alt="Logo do icasa" className="logo" src={logo} />
             <Tabs
@@ -153,71 +195,73 @@ function Midia() {
           </Paper>
         </header>
 
-        <Breadcrumbs className='crumb' style={{marginLeft: '90px', marginTop: '15px',}} aria-label="breadcrumb">
+        <Breadcrumbs className='crumb' style={{ marginLeft: '90px', marginTop: '15px', }} aria-label="breadcrumb">
           <StyledBreadcrumb
-          component="a"
-          href="/home"
-          label="Início"
-          icon={<HomeIcon fontSize="small" />}
-        
-        />
-        <StyledBreadcrumb component="a" href="#" label="Mídia" onClick={handleClick} />
+            component="a"
+            href="/home"
+            label="Início"
+            icon={<HomeIcon fontSize="small" />}
+
+          />
+          <StyledBreadcrumb component="a" href="#" label="Mídia" onClick={handleClick} />
         </Breadcrumbs>
-    
-      <div className="wrapper">
 
-        {/* logo */}
-        <div className="container1">
-          <a href="/"><img src={logo} alt="Logo do icasa" style={{ marginLeft: '550px', height: '43px', width: '62px', marginTop: '3px' }} /></a>
-          <div className="margingallery">
-            <a>Fotos</a>
+        <div className="wrapper">
+
+          {/* logo */}
+          <div className="container1">
+            <a href="/"><img src={logo} alt="Logo do icasa" style={{ marginLeft: '550px', height: '43px', width: '62px', marginTop: '3px' }} /></a>
+            <div className="margingallery">
+              <a>Fotos</a>
+            </div>
           </div>
+
+          {/* image grid list */}
+          <div className="container2">
+            <div className="cont">
+              <img className="fotos" src={img1} style={{ height: '152px' }} />
+              <img className="fotos" src={img2} style={{ height: '152px' }} />
+              <img className="fotos" src={img3} style={{ height: '152px' }} />
+              <img className="fotos" src={img6} style={{ height: '152px' }} />
+              <img className="fotos" src={img5} style={{ height: '152px' }} />
+            </div>
+
+            <div className="cont">
+              <img className="fotos" src={img1} style={{ height: '152px' }} />
+              <img className="fotos" src={img2} style={{ height: '152px' }} />
+              <img className="fotos" src={img3} style={{ height: '152px' }} />
+              <img className="fotos" src={img6} style={{ height: '152px' }} />
+              <img className="fotos" src={img5} style={{ height: '152px' }} />
+            </div>
+          </div>
+
+          {/* title video grid list */}
+          <div className="container3">
+            <a><img src={logo} alt="Logo do icasa" style={{ marginLeft: '550px', height: '43px', width: '62px', marginTop: '3px' }} /></a>
+            <div className="margingallery">
+              <a>Videos</a>
+            </div>
+          </div>
+
+          {/* videos grid list */}
+          <div className="container4">
+            <div style={{ marginLeft: '30px' }}>
+              <iframe style={{ marginLeft: '50px', marginTop: '25px' }} width="336" height="222" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style={{ marginLeft: '50px', marginTop: '25px' }} width="336" height="222" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe style={{ marginLeft: '50px', marginTop: '25px' }} width="336" height="222" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+
         </div>
-
-        {/* image grid list */}
-        <div className="container2">
-          <div className="cont">
-            <img className="fotos" src={img1} style={{ height: '152px' }} />
-            <img className="fotos" src={img2} style={{ height: '152px' }} />
-            <img className="fotos" src={img3} style={{ height: '152px' }} />
-            <img className="fotos" src={img6} style={{ height: '152px' }} />
-            <img className="fotos" src={img5} style={{ height: '152px' }} />
-          </div>
-
-          <div className="cont">
-            <img className="fotos" src={img1} style={{ height: '152px' }} />
-            <img className="fotos" src={img2} style={{ height: '152px' }} />
-            <img className="fotos" src={img3} style={{ height: '152px' }} />
-            <img className="fotos" src={img6} style={{ height: '152px' }} />
-            <img className="fotos" src={img5} style={{ height: '152px' }} />
-          </div>
-        </div>
-
-        {/* title video grid list */}
-        <div className="container3">
-          <a><img src={logo} alt="Logo do icasa" style={{ marginLeft: '550px', height: '43px', width: '62px', marginTop: '3px' }} /></a>
-          <div className="margingallery">
-            <a>Videos</a>
-          </div>
-        </div>
-
-      {/* videos grid list */}
-      <div className="container4">
-			<div style={{marginLeft: '30px'}}>
-				<iframe style={{marginLeft: '50px', marginTop: '25px'}} width="336" height="222" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe style={{marginLeft: '50px', marginTop: '25px'}} width="336" height="222" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe style={{marginLeft: '50px', marginTop: '25px'}} width="336" height="222" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-		</div>
-
+        
       </div>
-      <footer>
-      <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
-        Associação Desportiva Recreativa e Cultural Icasa
-        Icasafc.com - Todos os direitos reservados.
+      <TableFooter className={classes.footer}>
+          <Typography style={{ margintTop: 10, padding: '10px', }} variant="body1" color="initial">
+            Associação Desportiva Recreativa e Cultural Icasa
+            Icasafc.com - Todos os direitos reservados.
         </Typography>
-      </footer>
-    </div>
+        </TableFooter>
+    </ThemeProvider>
   );
 }
 

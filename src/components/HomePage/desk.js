@@ -33,7 +33,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Switch } from '@material-ui/core';
 
 const logo = require('../../assets/logo.png');
-
+const backgroundImage = require('../../assets//Torcida-do-time-do-Icasa-5.jpg')
 
 
 {/* <script src="fonte.js"></script> */ }
@@ -117,6 +117,7 @@ const useStyles = makeStyles((theme) => ({
     width: '96%',
     WebkitBorderRadius: '20px',
   },
+ 
 }));
 
 const ft = require('../../assets/foto5.jpg');
