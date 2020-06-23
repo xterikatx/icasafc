@@ -23,7 +23,6 @@ import Tab from '@material-ui/core/Tab';
 import { createMuiTheme } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import { useThemeContext } from "../../ThemeContext";
 import styled from "@emotion/styled";
 
 
@@ -149,10 +148,8 @@ function HomePage() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const themeState = useThemeContext();
   
   return (
-    <Wrapper>
       <div className="all_components">
         <header>
           <Link className='aces' variant="body2" color="inherit" accessKey="H" href="/home" >
@@ -164,11 +161,7 @@ function HomePage() {
           <Link className='aces' variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
-       <button className= 'aces' variant="body2" color="inherit" onClick={() => themeState.toggle()}>
-        {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-      </button>
       
-
           <Paper className={classes.root}>
             <img alt="Logo do icasa" className="logo" src={logo} />
             <Tabs
@@ -491,7 +484,6 @@ function HomePage() {
         </Typography>
         </React.Fragment>
       </div>
-    </Wrapper>
   );
 }
 
