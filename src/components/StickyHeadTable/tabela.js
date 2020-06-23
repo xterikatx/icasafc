@@ -152,6 +152,9 @@ function StickyHeadTable() {
       <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
         Ir para Mídia [ M ]
       </Link>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "T" href="/Tabelas/#ancora2">
+        Ir para a Tabela [ T ]
+      </Link>
       
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
@@ -205,7 +208,7 @@ function StickyHeadTable() {
       />
       <StyledBreadcrumb component="a" href="#" label="Tabelas" onClick={handleClick} />
     </Breadcrumbs>
-      <Typography className='tii' href="/Club" gutterBottom variant="itle1">
+      <Typography id="ancora2" className='tii' href="/Club" gutterBottom variant="itle1">
       TABELA BRASILEIRÃO SERIE B
       </Typography>
       <TableContainer className={classes.container}>
