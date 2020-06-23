@@ -457,6 +457,7 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Footer */}
     <React.Fragment>
     <CssBaseline />
       <Container maxWidth="sm">

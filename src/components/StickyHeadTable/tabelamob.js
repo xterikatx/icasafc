@@ -8,6 +8,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const columns = [
   { id: 'name', label: 'Name', minWidth: 170 },
@@ -82,6 +88,7 @@ function StickyHeadTable() {
   };
 
   return (
+    // Tabela
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
@@ -125,7 +132,25 @@ function StickyHeadTable() {
         onChangePage={handleChangePage}
         onChangeRowsPerPage={handleChangeRowsPerPage}
       />
+
+    {/* // Footer */}
+
+    <React.Fragment>
+    <CssBaseline />
+      <Container maxWidth="sm">
+        <Typography component="div" style={{marginTop:10, }} />
+      </Container>
+      <Grid  style={{marginLeft: '10px', marginBottom: 5,}}>
+      <FacebookIcon />
+      <InstagramIcon />
+      </Grid>
+        <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
+        Associação Desportiva Recreativa e Cultural Icasa
+        Icasafc.com - Todos os direitos reservados.
+        </Typography>
+    </React.Fragment>
     </Paper>
+    
   );
 }
 export default StickyHeadTable;
