@@ -33,3 +33,11 @@
   background: red;
   width: 100px;
 }
+
+.blc {
+  height: 70px;
+  width: 90px;
+  margin-right: 10px;
+  object-fit: cover;
+  border-radius: 5px;
+}

@@ -6,9 +6,9 @@ import Mobile from './tabelamob';
 
 export default function Menu() {
   const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1024px)'
+    query: '(min-device-width: 800px)'
   })
-  const isMobile = useMediaQuery({ query: '(max-width: 600px)' })
+  const isMobile = useMediaQuery({ query: '(max-width: 800px)' })
 
   return (
     <div>

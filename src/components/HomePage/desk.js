@@ -245,13 +245,13 @@ function HomePage() {
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
-              <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
+              <Link href="/Noticia" for="ids" color="inherit" variant="h6" className="linkdanoticia">
               {'Titulo da Noticia'}
               </Link>
               {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
+                <Typography href="/Noticia" variant="body2" id="ids" gutterBottom color="textSecondary" className="descricaonoticia">
                   A descrição das noticias fica localizado aqui
                 </Typography>
                 <Typography variant="body2" color="textSecondary" className="datanoticia">

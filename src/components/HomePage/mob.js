@@ -26,7 +26,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { MenuContainer } from '../styles';
-import Link from '@material-ui/core/Link';  
+import Link from '@material-ui/core/Link';
+
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 
 const newPhoto = require('../../assets/foto5.jpg');
 const imagens = require('../../assets/banner.PNG');
@@ -226,108 +228,149 @@ function HomePage() {
       <Typography className="txtnot" variant="h6" color="initial">
         Notícias do Time
       </Typography>
-      {/* <h3>Notícias de Time</h3> */}
-
-      <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="datanoticia">
-                  10/10/20
-                </Typography>
-              </Grid>
-              
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
+      <List className={classes.root}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <img className="blc" alt="Travis Howard" src={logo} />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Titulo da noticia"
+          secondary={
+            <React.Fragment>
+              {' — Aqui fica localizado um pouco da notica…'}
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                10/10/20
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <img className="blc" alt="Travis Howard" src={logo} />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Titulo da noticia"
+          secondary={
+            <React.Fragment>
+              {'Aqui fica localizado um pouco da notica…'}
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                10/10/20
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+         <img className="blc" alt="Travis Howard" src={imgs} />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Titulo da noticia"
+          secondary={
+            <React.Fragment>
+              {' — Aqui fica localizado um pouco da notica…'}
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                10/10/20
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+    </List>
     </div>
 
     {/* outro */}
 
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="iddanoticia">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
+    <div className="newsJogossss">
+      <Typography className="txtnot" variant="h6" color="initial">
+        Notícias do Time
+      </Typography>
+      <List className={classes.root}>
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <img className="blc" alt="Travis Howard" src={logo} />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Titulo da noticia"
+          secondary={
+            <React.Fragment>
+              {' — Aqui fica localizado um pouco da notica…'}
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                10/10/20
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+          <img className="blc" alt="Travis Howard" src={logo} />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Titulo da noticia"
+          secondary={
+            <React.Fragment>
+              {'Aqui fica localizado um pouco da notica…'}
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                10/10/20
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem alignItems="flex-start">
+        <ListItemAvatar>
+         <img className="blc" alt="Travis Howard" src={imgs} />
+        </ListItemAvatar>
+        <ListItemText
+          primary="Titulo da noticia"
+          secondary={
+            <React.Fragment>
+              {' — Aqui fica localizado um pouco da notica…'}
+              <Typography
+                component="span"
+                variant="body2"
+                className={classes.inline}
+                color="textPrimary"
+              >
+                10/10/20
+              </Typography>
+            </React.Fragment>
+          }
+        />
+      </ListItem>
+    </List>
     </div>
-
-
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="block" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="iddanoticia">
-                  10/10/20
-                </Typography>
-              </Grid>
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
-    </div>
-
-    {/* outro */}
-
     
 
       <section className="cta" >

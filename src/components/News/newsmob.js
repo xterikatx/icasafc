@@ -7,7 +7,6 @@ import ListItem from '@material-ui/core/ListItem';
 import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
 import './tyle.css';
 
 const logo = require('../../assets/foto8.png')
@@ -53,21 +52,21 @@ function Club() {
     <List className={classes.root}>
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+          <img className="blc" alt="Travis Howard" src={logo} />
         </ListItemAvatar>
         <ListItemText
-          primary="Brunch this weekend?"
+          primary="Titulo da noticia"
           secondary={
             <React.Fragment>
+              {' — Aqui fica localizado um pouco da notica…'}
               <Typography
                 component="span"
                 variant="body2"
                 className={classes.inline}
                 color="textPrimary"
               >
-                Ali Connors
+                10/10/20
               </Typography>
-              {" — I'll be in your neighborhood doing errands this…"}
             </React.Fragment>
           }
         />
@@ -75,21 +74,21 @@ function Club() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+          <img className="blc" alt="Travis Howard" src={logo} />
         </ListItemAvatar>
         <ListItemText
-          primary="Summer BBQ"
+          primary="Titulo da noticia"
           secondary={
             <React.Fragment>
+              {'Aqui fica localizado um pouco da notica…'}
               <Typography
                 component="span"
                 variant="body2"
                 className={classes.inline}
                 color="textPrimary"
               >
-                to Scott, Alex, Jennifer
+                10/10/20
               </Typography>
-              {" — Wish I could come, but I'm out of town this…"}
             </React.Fragment>
           }
         />
@@ -97,21 +96,21 @@ function Club() {
       <Divider variant="inset" component="li" />
       <ListItem alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+         <img className="blc" alt="Travis Howard" src={logo} />
         </ListItemAvatar>
         <ListItemText
-          primary="Oui Oui"
+          primary="Titulo da noticia"
           secondary={
             <React.Fragment>
+              {' — Aqui fica localizado um pouco da notica…'}
               <Typography
                 component="span"
                 variant="body2"
                 className={classes.inline}
                 color="textPrimary"
               >
-                Sandra Adams
+                10/10/20
               </Typography>
-              {' — Do you have Paris recommendations? Have you ever…'}
             </React.Fragment>
           }
         />
