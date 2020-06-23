@@ -26,6 +26,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import { useThemeContext } from "../../ThemeContext";
 import styled from "@emotion/styled";
 
+
 const logo = require('../../assets/logo.png');
 
 const Wrapper = styled("div")`
@@ -149,7 +150,8 @@ function HomePage() {
     setValue(newValue);
   };
   const themeState = useThemeContext();
-
+  const useThemeContext = () => React.useContext(ThemeContext);
+  
   return (
     <Wrapper>
       <div className="all_components">
@@ -254,7 +256,6 @@ function HomePage() {
           <Typography className="txtnot" id="ancora" variant="h6" color="initial">
             Notícias do Time
       </Typography>
-<<<<<<< HEAD
       {/* <h3>Notícias de Time</h3> */}
 
       <div className={classes.root}>
@@ -276,29 +277,6 @@ function HomePage() {
                 </Typography> */}
                 <Typography href="/Noticia" variant="body2" id="ids" gutterBottom color="textSecondary" className="descricaonoticia">
                   A descrição das noticias fica localizado aqui
-=======
-          {/* <h3>Notícias de Time</h3> */}
-
-          <div className={classes.root}>
-            <Paper className={classes.paper}>
-              <Grid container spacing={2}>
-                <Grid item>
-                  <ButtonBase className={classes.image}>
-                    <img className={classes.imgs} alt="Imagen com dois jogadores de futebol" src={ft} />
-                  </ButtonBase>
-                </Grid>
-                <Grid item xs={12} sm container>
-                  <Grid item xs container direction="column" spacing={2}>
-                    <Grid item xs>
-                      <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
-                        {'Titulo da Noticia'}
-                      </Link>
-                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                      <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
-                        A descrição das noticias fica localizado aqui
->>>>>>> fedda5ffcdee70ccb11ffe988ca4ab6f89c9aeb1
                 </Typography>
                       <Typography variant="body2" color="textSecondary" className="datanoticia">
                         10/10/20
