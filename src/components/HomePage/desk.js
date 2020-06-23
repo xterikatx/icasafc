@@ -316,7 +316,7 @@ function HomePage() {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                      <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
                         {'Titulo da Noticia'}
                       </Link>
                       {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
@@ -349,7 +349,7 @@ function HomePage() {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                      <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
                         {'Titulo da Noticia'}
                       </Link>
                       {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
@@ -385,7 +385,7 @@ function HomePage() {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                      <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
                         {'Titulo da Noticia'}
                       </Link>
                       {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
@@ -419,7 +419,7 @@ function HomePage() {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                      <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
                         {'Titulo da Noticia'}
                       </Link>
                       {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
@@ -452,7 +452,7 @@ function HomePage() {
                 <Grid item xs={12} sm container>
                   <Grid item xs container direction="column" spacing={2}>
                     <Grid item xs>
-                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                      <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
                         {'Titulo da Noticia'}
                       </Link>
                       {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
