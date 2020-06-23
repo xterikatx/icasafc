@@ -12,11 +12,15 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import FontSizeChanger from 'react-font-size-changer';
 
-
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Chip from '@material-ui/core/Chip';
 import HomeIcon from '@material-ui/icons/Home';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 const img5 = require('../../assets/foto5.jpg')
 const img1 = require('../../assets/foto1.jpg')
@@ -98,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     const classes = useStyles();
     const preventDefault = (event) => event.preventDefault();
   
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = React.useState(8);
     const handleChange = (event, newValue) => {
     setValue(newValue);
     };
@@ -106,6 +110,18 @@ const useStyles = makeStyles((theme) => ({
     return(
   <div>
     <header>
+    <Link className='aces' variant="body2" color="inherit" accessKey = "H" href="/home" >
+        Ir para o Início [ H ]
+      </Link>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
+        Ir para Mídia [ M ]
+      </Link>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "T" href="/Tabelas/#ancora2">
+        Ir para a Tabela [ T ]
+      </Link>
+      <Link className='aces' variant="body2" color="inherit" accessKey = "C" href="/Noticia/#ancora3">
+        Ir para o conteúdo [ C ]
+      </Link>
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
       <Tabs
@@ -174,7 +190,7 @@ const useStyles = makeStyles((theme) => ({
     <h6 className="goog" style={{marginLeft: '90px', marginTop: '0px'}}>Fonte: Google</h6>
     <h6 className="dta" style={{marginLeft: '90px', marginTop: '0px'}}>30 Abril 2020</h6>
 
-    <div style={{height: '3vh', marginLeft: '5%', width: '55%', marginTop: '30px', lineHeight: 1.6, marginBottom: '130px'}}>
+    <div id="ancora3" style={{height: '3vh', marginLeft: '5%', width: '55%', marginTop: '30px', lineHeight: 1.6, marginBottom: '130px'}}>
         <Typography className="txtnot" variant="body1" color="initial">
             A desenvolvedora de soluções tecnológicas com gerador de ozônio (O3) pode ter
             encontrado uma nova arma contra o coronavírus. Após realizar testes com o gás
@@ -326,6 +342,21 @@ const useStyles = makeStyles((theme) => ({
       </Paper>
     </div>
     </div>
+    {/* Footer */}
+    <React.Fragment>
+          <CssBaseline />
+          <Container maxWidth="sm">
+            <Typography component="div" style={{ marginTop: 300, marginLeft: -400, backgroundColor: '#fafafa', height: '15vh', width: '244.4%', }} />
+          </Container>
+          <Grid style={{ marginLeft: '10px', marginBottom: 5, }}>
+            <FacebookIcon />
+            <InstagramIcon />
+          </Grid>
+          <Typography style={{ margintTop: 10, padding: '10px', }} variant="body1" color="initial">
+            Associação Desportiva Recreativa e Cultural Icasa
+            Icasafc.com - Todos os direitos reservados.
+        </Typography>
+        </React.Fragment>
   </div>
   );
 }
