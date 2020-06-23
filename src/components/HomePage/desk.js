@@ -84,6 +84,9 @@ const useStyles = makeStyles((theme) => ({
     height: 100,
     objectFit: 'cover',
   },
+  links:{
+    margin:10
+  },
   imgs: {
     margin: 'auto',
     display: 'block',
@@ -102,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
   es: {
     height: 70,
     alignItems: 'center',
-    backgroundColor: '#388E3C',
+    backgroundColor: theme.palette.success.dark,
     color: 'white',
   },
   img: {
@@ -129,7 +132,8 @@ function HomePage() {
     palette: {
       type: palletType,
       primary: {
-        main: mainPrimaryColor
+        main: mainPrimaryColor,
+        
       },
       secondary: {
         main: mainSecondaryColor
@@ -170,16 +174,16 @@ function HomePage() {
     <ThemeProvider theme={darkTheme}>
       <div className="all_components">
         <header>
-          <Link className='aces' variant="body2" color="inherit" accessKey="H" href="/home" >
+          <Link className={classes.links} variant="body2" color="inherit" accessKey="H" href="/home" >
             Ir para o Início [ H ]
       </Link>
-          <Link className='aces' variant="body2" color="inherit" accessKey="M" href="/midia">
+          <Link className={classes.links} variant="body2" color="inherit" accessKey="M" href="/midia">
             Ir para Mídia [ M ]
       </Link>
-          <Link className='aces' variant="body2" color="inherit" accessKey="N" href="/#ancora">
+          <Link className={classes.links} variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
-
+      <Switch checked={darkState} onChange={handleThemeChange} />
           <Paper className={classes.root}>
             <img alt="Logo do icasa" className="logo" src={logo} />
             <Tabs
@@ -187,7 +191,7 @@ function HomePage() {
               onChange={handleChange}
               indicatorColor="primary"
               centered
-              className={classes.es}
+              
             >
               <Tab className="tab b" label="Início" href="/home" />
               <Tab className="tab" label="Tabelas" href="/Tabelas" accessKey="w" />
@@ -218,7 +222,6 @@ function HomePage() {
                   buttonsMargin: 10
                 }}
               />
-              <Switch checked={darkState} onChange={handleThemeChange} />
 
             </Tabs>
 
