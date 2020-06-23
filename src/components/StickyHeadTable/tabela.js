@@ -75,12 +75,12 @@ const useStyles = makeStyles({
   root: {
    
   },
-  container: {
-    maxHeight: 1040,
-    marginLeft: 65,
-    marginTop: 10,
-    width: '90%',
-  },
+    container: {
+      maxHeight: 1040,
+      marginLeft: 65,
+      marginTop: 10,
+      width: '90%',
+    },
   header: {
     display: 'flex',
     alignItems: 'center',
