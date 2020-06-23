@@ -31,25 +31,25 @@ import { Switch } from '@material-ui/core';
 const logo = require('../../assets/logo.png');
 
 const columns = [
-  { id: 'name', label: 'Name', minWidth: 170 },
-  { id: 'code', label: 'ISO\u00a0Code', minWidth: 100 },
+  { id: 'name', label: 'Nome', minWidth: 170 },
+  { id: 'code', label: '`Pontos', minWidth: 100 },
   {
     id: 'population',
-    label: 'Population',
+    label: 'Vitórias',
     minWidth: 170,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'size',
-    label: 'Size\u00a0(km\u00b2)',
+    label: 'DER',
     minWidth: 170,
     align: 'right',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'density',
-    label: 'Density',
+    label: 'E',
     minWidth: 170,
     align: 'right',
     format: (value) => value.toFixed(2),
@@ -62,21 +62,21 @@ function createData(name, code, population, size) {
 }
 
 const rows = [
-  createData('India', 'IN', 1324171354, 3287263),
-  createData('China', 'CN', 1403500365, 9596961),
-  createData('Italy', 'IT', 60483973, 301340),
-  createData('United States', 'US', 327167434, 9833520),
-  createData('Canada', 'CA', 37602103, 9984670),
-  createData('Australia', 'AU', 25475400, 7692024),
-  createData('Germany', 'DE', 83019200, 357578),
-  createData('Ireland', 'IE', 4857000, 70273),
-  createData('Mexico', 'MX', 126577691, 1972550),
-  createData('Japan', 'JP', 126317000, 377973),
-  createData('France', 'FR', 67022000, 640679),
-  createData('United Kingdom', 'GB', 67545757, 242495),
-  createData('Russia', 'RU', 146793744, 17098246),
-  createData('Nigeria', 'NG', 200962417, 923768),
-  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Icasa', 'IN', 1324171354, 3287263),
+  createData('Ceará', 'CN', 1403500365, 9596961),
+  createData('Flamengo', 'IT', 60483973, 301340),
+  createData('Corinthians', 'US', 327167434, 9833520),
+  createData('Palmeiras', 'CA', 37602103, 9984670),
+  createData('Atlético-GO', 'AU', 25475400, 7692024),
+  createData('Chapecoense', 'DE', 83019200, 357578),
+  createData('Fluminense', 'IE', 4857000, 70273),
+  createData('Grêmio', 'MX', 126577691, 1972550),
+  createData('Atlético-MG', 'JP', 126317000, 377973),
+  createData('Atlético-PR', 'FR', 67022000, 640679),
+  createData('Vasco', 'GB', 67545757, 242495),
+  createData('Internacional', 'RU', 146793744, 17098246),
+  createData('São Paulo', 'NG', 200962417, 923768),
+  createData('Bahia', 'BR', 210147125, 8515767),
 ];
 
 const useStyles = makeStyles({
