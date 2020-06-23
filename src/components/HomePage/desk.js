@@ -34,27 +34,27 @@ const tutorialSteps = [
   {
     label: 'San Francisco – Oakland Bay Bridge, United States',
     imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=600&h=250&q=60',
+      'https://images.unsplash.com/photo-1518091043644-c1d4457512c6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=889&q=80',
   },
   {
     label: 'Bird',
     imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=1200&h=250&q=60',
+      'https://images.unsplash.com/photo-1494177310973-4841f7d5a882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80',
   },
   {
     label: 'Bali, Indonesia',
     imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1200&h=250&q=80',
+      'https://images.unsplash.com/photo-1567117632960-56e34a4c2456?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80',
   },
   {
     label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
     imgPath:
-      'https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=1200&h=250&q=60',
+      'https://images.unsplash.com/photo-1575279326328-49cceeb9c5e4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80',
   },
   {
     label: 'Goč, Serbia',
     imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=1200&h=250&q=60',
+      'https://images.unsplash.com/flagged/photo-1550413231-202a9d53a331?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80',
   },
 ];
 

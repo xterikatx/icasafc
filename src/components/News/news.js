@@ -122,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
         <Tab className="tab" label="Contato" />
         {/** COMPONENTE QUE AUMENTA VOL */}
         <FontSizeChanger
-                  targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+                  targets={['.font, .goog, .dta, .titulonot, .crumb, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
                   onChange={(element, newValue, oldValue) => {
                     console.log(element, newValue, oldValue);
                   }}
@@ -148,23 +148,22 @@ const useStyles = makeStyles((theme) => ({
     </Paper>
       </header>
 
-    <Breadcrumbs style={{marginLeft: '90px', marginTop: '15px',}} aria-label="breadcrumb">
+    <Breadcrumbs className='crumb' style={{marginLeft: '90px', marginTop: '15px',}} aria-label="breadcrumb">
       <StyledBreadcrumb
         component="a"
         href="/home"
         label="Home"
         icon={<HomeIcon fontSize="small" />}
-        onClick={handleClick}
+        
       />
       <StyledBreadcrumb component="a" href="#" label="Notícias" onClick={handleClick} />
       <StyledBreadcrumb
         label="Barulhos estranhos no céu assustam pessoas de todo o mundo"
-        onClick={handleClick}
       />
     </Breadcrumbs>
 
     <div style={{marginLeft: '90px', width: '740px'}}>
-        <a><h1 style={{marginTop: 10, marginBottom:10,}}>Barulhos estranhos no céu assustam pessoas de todo o mundo</h1></a>
+        <a><h1 className='titulonot' style={{marginTop: 10, marginBottom:10,}}>Barulhos estranhos no céu assustam pessoas de todo o mundo</h1></a>
         <Typography style={{ marginBottom:15,}} className="txtnot" variant="body1" color="initial">
         A desenvolvedora de soluções tecnológicas com gerador de ozônio (O3) pode ter encontrado 
         uma nova arma contra o coronavírus.
@@ -172,8 +171,8 @@ const useStyles = makeStyles((theme) => ({
     </div>
 
     <img className="banner" src={img1} alt="Foto de capa" />
-    <h6 style={{marginLeft: '90px', marginTop: '0px'}}>Fonte: Google</h6>
-    <h6 style={{marginLeft: '90px', marginTop: '0px'}}>30 Abril 2020</h6>
+    <h6 className="goog" style={{marginLeft: '90px', marginTop: '0px'}}>Fonte: Google</h6>
+    <h6 className="dta" style={{marginLeft: '90px', marginTop: '0px'}}>30 Abril 2020</h6>
 
     <div style={{height: '3vh', marginLeft: '5%', width: '55%', marginTop: '30px', lineHeight: 1.6, marginBottom: '130px'}}>
         <Typography className="txtnot" variant="body1" color="initial">
