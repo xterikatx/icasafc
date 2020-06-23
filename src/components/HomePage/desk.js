@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'fontsource-roboto';
 import './styles.css';
 import './patrocinio.css';
@@ -20,10 +20,18 @@ import '../Menu/MenuDesktop.css';
 import FontSizeChanger from 'react-font-size-changer';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import styled from "@emotion/styled";
+import {
+  orange,
+  lightBlue,
+  deepPurple,
+  deepOrange
+} from "@material-ui/core/colors";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Switch } from '@material-ui/core';
+
 const logo = require('../../assets/logo.png');
 
 
@@ -112,6 +120,27 @@ const useStyles = makeStyles((theme) => ({
 const ft = require('../../assets/foto5.jpg');
 
 function HomePage() {
+
+  const [open, setOpen] = useState(true);
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "dark" : "light";
+  const mainPrimaryColor = darkState ? orange[500] : lightBlue[500];
+  const mainSecondaryColor = darkState ? deepOrange[900] : deepPurple[500];
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: palletType,
+      primary: {
+        main: mainPrimaryColor
+      },
+      secondary: {
+        main: mainSecondaryColor
+      }
+    }
+  });
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
+
   const theme = useTheme();
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -127,7 +156,7 @@ function HomePage() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  
+
 
   const handleStepChange = (step) => {
     setActiveStep(step);
@@ -137,8 +166,9 @@ function HomePage() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  
+
   return (
+    <ThemeProvider theme={darkTheme}>
       <div className="all_components">
         <header>
           <Link className='aces' variant="body2" color="inherit" accessKey="H" href="/home" >
@@ -150,7 +180,7 @@ function HomePage() {
           <Link className='aces' variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
-      
+
           <Paper className={classes.root}>
             <img alt="Logo do icasa" className="logo" src={logo} />
             <Tabs
@@ -163,7 +193,7 @@ function HomePage() {
               <Tab className="tab b" label="Início" href="/home" />
               <Tab className="tab" label="Tabelas" href="/Tabelas" accessKey="w" />
               <Tab className="tab" label="Programação" />
-              <Tab className="tab" label="Mídia" />
+              <Tab className="tab" label="Mídia" href="/midia" />
               <Tab className="tab" label="Contato" />
               {/** COMPONENTE QUE AUMENTA VOL */}
               <FontSizeChanger
@@ -189,7 +219,10 @@ function HomePage() {
                   buttonsMargin: 10
                 }}
               />
+              <Switch checked={darkState} onChange={handleThemeChange} />
+
             </Tabs>
+
           </Paper>
         </header>
 
@@ -237,27 +270,27 @@ function HomePage() {
           <Typography className="txtnot" id="ancora" variant="h6" color="initial">
             Notícias do Time
       </Typography>
-      {/* <h3>Notícias de Time</h3> */}
+          {/* <h3>Notícias de Time</h3> */}
 
-      <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" for="ids" color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+          <div className={classes.root}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <ButtonBase className={classes.image}>
+                    <img className={classes.imgs} alt="Imagen com dois jogadores de futebol" src={ft} />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Link href="/Noticia" for="ids" color="inherit" variant="h6" className="linkdanoticia">
+                        {'Titulo da Noticia'}
+                      </Link>
+                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
                  Titulo da Noticia
                 </Typography> */}
-                <Typography href="/Noticia" variant="body2" id="ids" gutterBottom color="textSecondary" className="descricaonoticia">
-                  A descrição das noticias fica localizado aqui
+                      <Typography href="/Noticia" variant="body2" id="ids" gutterBottom color="textSecondary" className="descricaonoticia">
+                        A descrição das noticias fica localizado aqui
                 </Typography>
                       <Typography variant="body2" color="textSecondary" className="datanoticia">
                         10/10/20
@@ -473,6 +506,7 @@ function HomePage() {
         </Typography>
         </React.Fragment>
       </div>
+    </ThemeProvider>
   );
 }
 
