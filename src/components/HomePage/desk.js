@@ -150,7 +150,6 @@ function HomePage() {
     setValue(newValue);
   };
   const themeState = useThemeContext();
-  const useThemeContext = () => React.useContext(ThemeContext);
   
   return (
     <Wrapper>
