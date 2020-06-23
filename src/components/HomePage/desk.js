@@ -110,9 +110,8 @@ const useStyles = makeStyles((theme) => ({
     objectFit: 'cover',
     height: 328,
     display: 'block',
-    maxWidth: 1243,
     overflow: 'hidden',
-    width: '100%',
+    width: '96%',
     WebkitBorderRadius: '20px',
   },
 }));
