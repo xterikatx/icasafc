@@ -79,31 +79,35 @@ const rows = [
   createData('Bahia', 'BR', 210147125, 8515767),
 ];
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
-   
+
   },
-    container: {
-      maxHeight: 1040,
-      marginLeft: 65,
-      marginTop: 10,
-      width: '90%',
-    },
+  container: {
+    maxHeight: 1040,
+    marginLeft: 65,
+    marginTop: 10,
+    width: '90%',
+  },
   header: {
     display: 'flex',
     alignItems: 'center',
     height: 50,
-   
-  
+
+
   },
-  
+  links: {
+    margin: 10,
+    color: theme.palette.background.dark,
+    padding: '0px 0px 0px 50px',
+  },
   es: {
-    height:70,
-    alignItems:'center',
-    backgroundColor:'#388E3C',
-    color:'white',
+    height: 70,
+    alignItems: 'center',
+    backgroundColor: '#388E3C',
+    color: 'white',
   },
-});
+}));
 
 const StyledBreadcrumb = withStyles((theme) => ({
   root: {
@@ -118,10 +122,7 @@ const StyledBreadcrumb = withStyles((theme) => ({
       boxShadow: theme.shadows[1],
       backgroundColor: emphasize(theme.palette.grey[300], 0.12),
     },
-    links: {
-      margin: 10,
-      color:theme.palette.background.default,
-    },
+
   },
 }))(Chip);
 
@@ -143,7 +144,7 @@ function StickyHeadTable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
- 
+
   const [value, setValue] = React.useState(1);
 
   const handleChange = (event, newValue) => {
@@ -170,140 +171,140 @@ function StickyHeadTable() {
     setDarkState(!darkState);
   };
 
-  
+
   return (
     <ThemeProvider theme={darkTheme}>
-    <Paper className={classes.root}>
-      <header>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "H" href="/home" >
-        Ir para o Início [ H ]
+      <Paper className={classes.root}>
+        <header>
+          <Link className={classes.links} variant="body2" color="inherit" accessKey="H" href="/home" >
+            Ir para o Início [ H ]
       </Link>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
-        Ir para Mídia [ M ]
+          <Link className={classes.links} variant="body2" color="inherit" accessKey="M" href="/midia">
+            Ir para Mídia [ M ]
       </Link>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "T" href="/Tabelas/#ancora2">
-        Ir para a Tabela [ T ]
+          <Link className={classes.links}variant="body2" color="inherit" accessKey="T" href="/Tabelas/#ancora2">
+            Ir para a Tabela [ T ]
       </Link>
-      <Link className={classes.links}  variant="body2" color="inherit" >
+          <Link className={classes.links} variant="body2" color="inherit" >
             Ativar alto contraste →
         <Switch checked={darkState} onChange={handleThemeChange} />
 
           </Link>
-      
-      <Paper className={classes.root}>
-        <img alt="Logo do icasa" className="logo" src={logo} />
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        centered
-        className={classes.es}
-        >
-        <Tab className="tab" label="Início"  href="/home" accessKey = "w" />
-        <Tab className="tab a" label="Tabelas" href="/Tabelas" />
-        <Tab className="tab" label="Programação" />
-        <Tab className="tab" label="Mídia" href="/midia"/>
-        <Tab className="tab" label="Contato" />
-        {/** COMPONENTE QUE AUMENTA VOL */}
-        <FontSizeChanger
-                  targets={['.font, .tii, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
-                  onChange={(element, newValue, oldValue) => {
-                    console.log(element, newValue, oldValue);
-                  }}
-                  options={{
-                    stepSize: 2,
-                    range: 3
-                  }}
-                  customButtons={{
-                    up: <span style={{ 'fontSize': '20px' }}>A+</span>,
-                    down: <span style={{ 'fontSize': '15px' }}>A-</span>,
-                    style: {
-                      backgroundColor: '#fafafa',
-                      color: 'black',
-                      WebkitBoxSizing: 'border-box',
-                      WebkitBorderRadius: '5px',
-                      width: '60px',
-                      cursor:'pointer',
-                    },
-                    buttonsMargin: 10
-                  }}
-         />
-      </Tabs>
-    </Paper>
-      </header>
 
-      <Breadcrumbs style={{marginLeft: '90px', marginTop: '15px', marginBottom: 5,}} aria-label="breadcrumb">
-      <StyledBreadcrumb
-        component="a"
-        href="#"
-        label="Home"
-        icon={<HomeIcon fontSize="small" />}
-        onClick={handleClick}
-      />
-      <StyledBreadcrumb component="a" href="#" label="Tabelas" onClick={handleClick} />
-    </Breadcrumbs>
-      <Typography id="ancora2" className='tii' href="/Club" gutterBottom variant="itle1">
-      TABELA BRASILEIRÃO SERIE B
+          <Paper className={classes.root}>
+            <img alt="Logo do icasa" className="logo" src={logo} />
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              centered
+              className={classes.es}
+            >
+              <Tab className="tab" label="Início" href="/home" accessKey="w" />
+              <Tab className="tab a" label="Tabelas" href="/Tabelas" />
+              <Tab className="tab" label="Programação" />
+              <Tab className="tab" label="Mídia" href="/midia" />
+              <Tab className="tab" label="Contato" />
+              {/** COMPONENTE QUE AUMENTA VOL */}
+              <FontSizeChanger
+                targets={['.font, .tii, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+                onChange={(element, newValue, oldValue) => {
+                  console.log(element, newValue, oldValue);
+                }}
+                options={{
+                  stepSize: 2,
+                  range: 3
+                }}
+                customButtons={{
+                  up: <span style={{ 'fontSize': '20px' }}>A+</span>,
+                  down: <span style={{ 'fontSize': '15px' }}>A-</span>,
+                  style: {
+                    backgroundColor: '#fafafa',
+                    color: 'black',
+                    WebkitBoxSizing: 'border-box',
+                    WebkitBorderRadius: '5px',
+                    width: '60px',
+                    cursor: 'pointer',
+                  },
+                  buttonsMargin: 10
+                }}
+              />
+            </Tabs>
+          </Paper>
+        </header>
+
+        <Breadcrumbs style={{ marginLeft: '90px', marginTop: '15px', marginBottom: 5, }} aria-label="breadcrumb">
+          <StyledBreadcrumb
+            component="a"
+            href="#"
+            label="Home"
+            icon={<HomeIcon fontSize="small" />}
+            onClick={handleClick}
+          />
+          <StyledBreadcrumb component="a" href="#" label="Tabelas" onClick={handleClick} />
+        </Breadcrumbs>
+        <Typography id="ancora2" className='tii' href="/Club" gutterBottom variant="itle1">
+          TABELA BRASILEIRÃO SERIE B
       </Typography>
-      <TableContainer className={classes.container}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>
-              {columns.map((column) => (
-                <TableCell
-                  key={column.id}
-                  align={column.align}
-                  style={{ minWidth: column.minWidth }}
-                >
-                  {column.label}
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
-              return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
-                  {columns.map((column) => {
-                    const value = row[column.id];
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === 'number' ? column.format(value) : value}
-                      </TableCell>
-                    );
-                  })}
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-      </TableContainer>
-      <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      />
+        <TableContainer className={classes.container}>
+          <Table stickyHeader aria-label="sticky table">
+            <TableHead>
+              <TableRow>
+                {columns.map((column) => (
+                  <TableCell
+                    key={column.id}
+                    align={column.align}
+                    style={{ minWidth: column.minWidth }}
+                  >
+                    {column.label}
+                  </TableCell>
+                ))}
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((row) => {
+                return (
+                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                    {columns.map((column) => {
+                      const value = row[column.id];
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                          {column.format && typeof value === 'number' ? column.format(value) : value}
+                        </TableCell>
+                      );
+                    })}
+                  </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <TablePagination
+          rowsPerPageOptions={[10, 25, 100]}
+          component="div"
+          count={rows.length}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onChangePage={handleChangePage}
+          onChangeRowsPerPage={handleChangeRowsPerPage}
+        />
 
-      {/* Footer */}
-    <React.Fragment>
-    <CssBaseline />
-      <Container maxWidth="sm" >
-        <Typography component="div"/>
-      </Container >
-      <Grid  style={{marginTop: 30, marginLeft:10,}}>
-      <FacebookIcon />
-      <InstagramIcon />
-      </Grid>
-        <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
-        Associação Desportiva Recreativa e Cultural Icasa
-        Icasafc.com - Todos os direitos reservados.
+        {/* Footer */}
+        <React.Fragment>
+          <CssBaseline />
+          <Container maxWidth="sm" >
+            <Typography component="div" />
+          </Container >
+          <Grid style={{ marginTop: 30, marginLeft: 10, }}>
+            <FacebookIcon />
+            <InstagramIcon />
+          </Grid>
+          <Typography style={{ margintTop: 10, padding: '10px', }} variant="body1" color="initial">
+            Associação Desportiva Recreativa e Cultural Icasa
+            Icasafc.com - Todos os direitos reservados.
         </Typography>
-    </React.Fragment>
-    </Paper>
+        </React.Fragment>
+      </Paper>
     </ThemeProvider>
   );
 }
