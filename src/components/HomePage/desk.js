@@ -180,10 +180,15 @@ function HomePage() {
           <Link className={classes.links} variant="body2" color="inherit" accessKey="M" href="/midia">
             Ir para Mídia [ M ]
       </Link>
+      
           <Link className={classes.links} variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
-          <Switch checked={darkState} onChange={handleThemeChange} />
+      <Link className={classes.links} variant="body2" color="inherit" >
+        Ativar alto contraste →
+        <Switch checked={darkState} onChange={handleThemeChange} />
+
+      </Link>
           <Paper className={classes.root}>
             <img alt="Logo do icasa" className="logo" src={logo} />
             <Tabs

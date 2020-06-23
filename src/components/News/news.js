@@ -142,6 +142,9 @@ const useStyles = makeStyles((theme) => ({
           <Link className={classes.links} variant="body2" color="inherit" accessKey="N" href="/#ancora">
             Ir para Notícias do Time [ N ]
       </Link>
+      <Link className={classes.links} variant="body2" color="inherit" >
+        Ativar alto contraste →
+      </Link>
           <Switch checked={darkState} onChange={handleThemeChange} />
       <Paper className={classes.root}>
         <img alt="Logo do icasa" className="logo" src={logo} />
