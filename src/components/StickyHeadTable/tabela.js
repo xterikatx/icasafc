@@ -177,7 +177,7 @@ function StickyHeadTable() {
                     },
                     buttonsMargin: 10
                   }}
-                />
+         />
       </Tabs>
     </Paper>
       </header>
