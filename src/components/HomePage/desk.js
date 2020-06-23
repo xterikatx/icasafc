@@ -23,10 +23,22 @@ import Tab from '@material-ui/core/Tab';
 import { createMuiTheme } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import { useThemeContext } from "../../ThemeContext";
+import styled from "@emotion/styled";
 
 const logo = require('../../assets/logo.png');
 
-{/* <script src="fonte.js"></script> */}
+const Wrapper = styled("div")`
+  background: ${props => props.theme.background};
+  width: 100vw;
+  height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+  h1 {
+    color: ${props => props.theme.body};
+  }
+`;
+
+{/* <script src="fonte.js"></script> */ }
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const tutorialSteps = [
@@ -72,14 +84,14 @@ const useStyles = makeStyles((theme) => ({
   image: {
     width: 150,
     height: 100,
-    objectFit:'cover',
+    objectFit: 'cover',
   },
   imgs: {
     margin: 'auto',
     display: 'block',
     maxWidth: '100%',
     maxHeight: '100%',
-    objectFit:'cover',
+    objectFit: 'cover',
     WebkitBorderRadius: '10px',
   },
   header: {
@@ -90,21 +102,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.default,
   },
   es: {
-    height:70,
-    alignItems:'center',
-    backgroundColor:'#388E3C',
-    color:'white',
+    height: 70,
+    alignItems: 'center',
+    backgroundColor: '#388E3C',
+    color: 'white',
   },
   img: {
-    marginLeft:'10',
-    objectFit:'cover',
+    marginLeft: '10',
+    objectFit: 'cover',
     height: 328,
-     display: 'block',
-     maxWidth: 1243,
-     overflow: 'hidden',
-     width: '100%',
-     WebkitBorderRadius: '20px',
-    },
+    display: 'block',
+    maxWidth: 1243,
+    overflow: 'hidden',
+    width: '100%',
+    WebkitBorderRadius: '20px',
+  },
 }));
 
 const ft = require('../../assets/foto5.jpg');
@@ -115,359 +127,367 @@ function HomePage() {
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = tutorialSteps.length;
   const preventDefault = (event) => event.preventDefault();
-  
-  
+
+
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
-  
+
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-  
+
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
   const [value, setValue] = React.useState(0);
-  
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const themeState = useThemeContext();
+
   return (
-    <div className="all_components">
-      <header>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "H" href="/home" >
-        Ir para o Início [ H ]
+    <Wrapper>
+      <div className="all_components">
+        <header>
+          <Link className='aces' variant="body2" color="inherit" accessKey="H" href="/home" >
+            Ir para o Início [ H ]
       </Link>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "M" href="/midia">
-        Ir para Mídia [ M ]
+          <Link className='aces' variant="body2" color="inherit" accessKey="M" href="/midia">
+            Ir para Mídia [ M ]
       </Link>
-      <Link className='aces' variant="body2" color="inherit" accessKey = "N" href="/#ancora">
-        Ir para Notícias do Time [ N ]
+          <Link className='aces' variant="body2" color="inherit" accessKey="N" href="/#ancora">
+            Ir para Notícias do Time [ N ]
       </Link>
-
-      <Paper className={classes.root}>
-        <img alt="Logo do icasa" className="logo" src={logo} />
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        centered
-        className={classes.es}
-        >
-        <Tab className="tab b" label="Início"  href="/home" />
-        <Tab className="tab" label="Tabelas" href="/Tabelas" accessKey = "w" />
-        <Tab className="tab" label="Programação" />
-        <Tab className="tab" label="Mídia" />
-        <Tab className="tab" label="Contato" />
-        {/** COMPONENTE QUE AUMENTA VOL */}
-        <FontSizeChanger
-        targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
-        onChange={(element, newValue, oldValue) => {
-          console.log(element, newValue, oldValue);
-          }}
-          options={{
-            stepSize: 2,
-            range: 3
-          }}
-          customButtons={{
-            up: <span style={{ 'fontSize': '20px' }}>A+</span>,
-            down: <span style={{ 'fontSize': '15px' }}>A-</span>,
-          style: {
-            backgroundColor: '#fafafa',
-            color: 'black',
-            WebkitBoxSizing: 'border-box',
-            WebkitBorderRadius: '5px',
-            width: '60px',
-            cursor:'pointer',
-          },
-            buttonsMargin: 10
-          }}
-        />
-      </Tabs>
-    </Paper>
-      </header>
+        <Link className='aces' variant="body2" color="inherit" onClick={() => themeState.toggle()}>
+        {themeState.dark ? "Switch to Light Mode" : "Switch to Dark Mode"}
+      </Link>
       
-      <div className={classes.root}>
-      <Paper square elevation={0} className={classes.header}>
-        <Typography className='tett'>{tutorialSteps[activeStep].label}</Typography>
-      </Paper>
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents
-      >
-        {tutorialSteps.map((step, index) => (
-          <div className='tett' key={step.label}>
-            {Math.abs(activeStep - index) <= 2 ? (
-              <img className={classes.img} src={step.imgPath} alt={step.label} />
-            ) : null}
-          </div>
-        ))}
-      </AutoPlaySwipeableViews>
-      <MobileStepper
-        variant="dots"
-        steps={5}
-        position="static"
-        activeStep={activeStep}
-        nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
-         
-          {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-        </Button>
-      }
-      backButton={
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-          {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-        
-        </Button>
-        }
-      />
-    </div>
 
-      {/*section de noticias aqui*/}
+          <Paper className={classes.root}>
+            <img alt="Logo do icasa" className="logo" src={logo} />
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              indicatorColor="primary"
+              centered
+              className={classes.es}
+            >
+              <Tab className="tab b" label="Início" href="/home" />
+              <Tab className="tab" label="Tabelas" href="/Tabelas" accessKey="w" />
+              <Tab className="tab" label="Programação" />
+              <Tab className="tab" label="Mídia" />
+              <Tab className="tab" label="Contato" />
+              {/** COMPONENTE QUE AUMENTA VOL */}
+              <FontSizeChanger
+                targets={['.font, .tab, .tett, .txtnot, .linkdanoticia, .descricaonoticia, .datanoticia, .iddanoticia, .titulodanoticia']} //aqui deve ficar as class que tem que alterar, separar por virgula
+                onChange={(element, newValue, oldValue) => {
+                  console.log(element, newValue, oldValue);
+                }}
+                options={{
+                  stepSize: 2,
+                  range: 3
+                }}
+                customButtons={{
+                  up: <span style={{ 'fontSize': '20px' }}>A+</span>,
+                  down: <span style={{ 'fontSize': '15px' }}>A-</span>,
+                  style: {
+                    backgroundColor: '#fafafa',
+                    color: 'black',
+                    WebkitBoxSizing: 'border-box',
+                    WebkitBorderRadius: '5px',
+                    width: '60px',
+                    cursor: 'pointer',
+                  },
+                  buttonsMargin: 10
+                }}
+              />
+            </Tabs>
+          </Paper>
+        </header>
 
-      <div className="newsJogoss">
-      <Typography className="txtnot" id="ancora"  variant="h6" color="initial">
-        Notícias do Time
-      </Typography>
-      {/* <h3>Notícias de Time</h3> */}
+        <div className={classes.root}>
+          <Paper square elevation={0} className={classes.header}>
+            <Typography className='tett'>{tutorialSteps[activeStep].label}</Typography>
+          </Paper>
+          <AutoPlaySwipeableViews
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            index={activeStep}
+            onChangeIndex={handleStepChange}
+            enableMouseEvents
+          >
+            {tutorialSteps.map((step, index) => (
+              <div className='tett' key={step.label}>
+                {Math.abs(activeStep - index) <= 2 ? (
+                  <img className={classes.img} src={step.imgPath} alt={step.label} />
+                ) : null}
+              </div>
+            ))}
+          </AutoPlaySwipeableViews>
+          <MobileStepper
+            variant="dots"
+            steps={5}
+            position="static"
+            activeStep={activeStep}
+            nextButton={
+              <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
 
-      <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagen com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="datanoticia">
-                  10/10/20
-                </Typography>
-              </Grid>
-              
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
+                {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+              </Button>
+            }
+            backButton={
+              <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
 
-    {/* outro */}
-
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="iddanoticia">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
-
-    {/* outro */}
-
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="iddanoticia">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
-      </div>
-
-      <div className="newsJogos3">
-      <Typography className="txtnot" variant="h6" color="initial">
-        Notícias de Jogos
-      </Typography>
-      <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="iddanoticia">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-              
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
-
-    {/* outro */}
-
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="iddanoticia">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
-
-    {/* outro */}
-
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase className={classes.image}>
-              <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
-            </ButtonBase>
-          </Grid>
-          <Grid item xs={12} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item xs>
-              <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
-              {'Titulo da Noticia'}
-              </Link>
-              {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
-                 Titulo da Noticia
-                </Typography> */}
-                <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
-                  A descrição das noticias fica localizado aqui
-                </Typography>
-                <Typography variant="body2" color="textSecondary" className="iddanoticia">
-                  ID: 1030114
-                </Typography>
-              </Grid>
-            </Grid>
-            
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
-       
-      </div>
-
-      <div className="sponsorship">
-        <h3 className="titulodanoticia">Patrocinio</h3>
-        <iframe width="310" height="175" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <iframe width="310" height="175" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-
-      <section className="cta" >
-        <div className="inner">
-          <img className="img-address" alt=""/>
-          <h1>Nossa Localização</h1>
-          <p>Rua Frei Damião, 1720 - CEP: 63040-640 - Lagoa Seca - Juazeiro do Norte-CE</p>
-          <p>Fone-Fax: (88)3571- 3060.</p>
+              </Button>
+            }
+          />
         </div>
-      </section>
 
-      {/* Footer */}
-    <React.Fragment>
-    <CssBaseline />
-      <Container maxWidth="sm">
-        <Typography component="div" style={{marginTop:100, marginLeft:-400,backgroundColor: '#fafafa', height: '15vh', width:'244.4%',}} />
-      </Container>
-      <Grid  style={{marginLeft: '10px', marginBottom: 5,}}>
-      <FacebookIcon />
-      <InstagramIcon />
-      </Grid>
-        <Typography style={{ margintTop: 10, padding:'10px',}} variant="body1" color="initial">
-        Associação Desportiva Recreativa e Cultural Icasa
-        Icasafc.com - Todos os direitos reservados.
+        {/*section de noticias aqui*/}
+
+        <div className="newsJogoss">
+          <Typography className="txtnot" id="ancora" variant="h6" color="initial">
+            Notícias do Time
+      </Typography>
+          {/* <h3>Notícias de Time</h3> */}
+
+          <div className={classes.root}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <ButtonBase className={classes.image}>
+                    <img className={classes.imgs} alt="Imagen com dois jogadores de futebol" src={ft} />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Link href="/Noticia" color="inherit" variant="h6" className="linkdanoticia">
+                        {'Titulo da Noticia'}
+                      </Link>
+                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                      <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
+                        A descrição das noticias fica localizado aqui
+                </Typography>
+                      <Typography variant="body2" color="textSecondary" className="datanoticia">
+                        10/10/20
+                </Typography>
+                    </Grid>
+
+                  </Grid>
+
+                </Grid>
+              </Grid>
+            </Paper>
+          </div>
+
+          {/* outro */}
+
+          <div className={classes.root}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <ButtonBase className={classes.image}>
+                    <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                        {'Titulo da Noticia'}
+                      </Link>
+                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                      <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
+                        A descrição das noticias fica localizado aqui
+                </Typography>
+                      <Typography variant="body2" color="textSecondary" className="iddanoticia">
+                        ID: 1030114
+                </Typography>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+              </Grid>
+            </Paper>
+          </div>
+
+          {/* outro */}
+
+          <div className={classes.root}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <ButtonBase className={classes.image}>
+                    <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                        {'Titulo da Noticia'}
+                      </Link>
+                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                      <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia ">
+                        A descrição das noticias fica localizado aqui
+                </Typography>
+                      <Typography variant="body2" color="textSecondary" className="iddanoticia">
+                        ID: 1030114
+                </Typography>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+              </Grid>
+            </Paper>
+          </div>
+        </div>
+
+        <div className="newsJogos3">
+          <Typography className="txtnot" variant="h6" color="initial">
+            Notícias de Jogos
+      </Typography>
+          <div className={classes.root}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <ButtonBase className={classes.image}>
+                    <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                        {'Titulo da Noticia'}
+                      </Link>
+                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                      <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
+                        A descrição das noticias fica localizado aqui
+                </Typography>
+                      <Typography variant="body2" color="textSecondary" className="iddanoticia">
+                        ID: 1030114
+                </Typography>
+                    </Grid>
+
+                  </Grid>
+
+                </Grid>
+              </Grid>
+            </Paper>
+          </div>
+
+          {/* outro */}
+
+          <div className={classes.root}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <ButtonBase className={classes.image}>
+                    <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                        {'Titulo da Noticia'}
+                      </Link>
+                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                      <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
+                        A descrição das noticias fica localizado aqui
+                </Typography>
+                      <Typography variant="body2" color="textSecondary" className="iddanoticia">
+                        ID: 1030114
+                </Typography>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+              </Grid>
+            </Paper>
+          </div>
+
+          {/* outro */}
+
+          <div className={classes.root}>
+            <Paper className={classes.paper}>
+              <Grid container spacing={2}>
+                <Grid item>
+                  <ButtonBase className={classes.image}>
+                    <img className={classes.imgs} alt="Imagem com dois jogadores de futebol" src={ft} />
+                  </ButtonBase>
+                </Grid>
+                <Grid item xs={12} sm container>
+                  <Grid item xs container direction="column" spacing={2}>
+                    <Grid item xs>
+                      <Link href="/Noticia" onClick={preventDefault} color="inherit" variant="h6" className="linkdanoticia">
+                        {'Titulo da Noticia'}
+                      </Link>
+                      {/* <Typography className='ti' href="/Club" gutterBottom variant="subtitle1">
+                 Titulo da Noticia
+                </Typography> */}
+                      <Typography variant="body2" gutterBottom color="textSecondary" className="descricaonoticia">
+                        A descrição das noticias fica localizado aqui
+                </Typography>
+                      <Typography variant="body2" color="textSecondary" className="iddanoticia">
+                        ID: 1030114
+                </Typography>
+                    </Grid>
+                  </Grid>
+
+                </Grid>
+              </Grid>
+            </Paper>
+          </div>
+
+        </div>
+
+        <div className="sponsorship">
+          <h3 className="titulodanoticia">Patrocinio</h3>
+          <iframe width="310" height="175" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="310" height="175" src="https://www.youtube.com/embed/wHV1TKkceow" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <section className="cta" >
+          <div className="inner">
+            <img className="img-address" alt="" />
+            <h1>Nossa Localização</h1>
+            <p>Rua Frei Damião, 1720 - CEP: 63040-640 - Lagoa Seca - Juazeiro do Norte-CE</p>
+            <p>Fone-Fax: (88)3571- 3060.</p>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <React.Fragment>
+          <CssBaseline />
+          <Container maxWidth="sm">
+            <Typography component="div" style={{ marginTop: 100, marginLeft: -400, backgroundColor: '#fafafa', height: '15vh', width: '244.4%', }} />
+          </Container>
+          <Grid style={{ marginLeft: '10px', marginBottom: 5, }}>
+            <FacebookIcon />
+            <InstagramIcon />
+          </Grid>
+          <Typography style={{ margintTop: 10, padding: '10px', }} variant="body1" color="initial">
+            Associação Desportiva Recreativa e Cultural Icasa
+            Icasafc.com - Todos os direitos reservados.
         </Typography>
-    </React.Fragment>
-    </div>
+        </React.Fragment>
+      </div>
+    </Wrapper>
   );
 }
 

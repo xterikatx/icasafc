@@ -8,7 +8,7 @@ const defaultContextData = {
 };
 
 const ThemeContext = React.createContext(defaultContextData);
-const useTheme = () => React.useContext(ThemeContext);
+const useThemeContext = () => React.useContext(ThemeContext);
 
 const useEffectDarkMode = () => {
   const [themeState, setThemeState] = React.useState({
@@ -52,4 +52,4 @@ const ThemeProvider = ({ children }) => {
   );
 };
 
-export { ThemeProvider, useTheme };
+export { ThemeProvider, useThemeContext };
